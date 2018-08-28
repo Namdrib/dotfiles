@@ -1,0 +1,22 @@
+[user]
+	name = Denton Phosavanh
+	email = dphosavanhau+github@gmail.com
+
+[github]
+	user = Namdrib
+
+[core]
+	editor = vim
+
+[alias]
+	br = branch
+	ci = commit
+	co = checkout
+	p = push
+	st = status
+
+[color]
+	ui = auto
+
+[fetch]
+	prune = true
