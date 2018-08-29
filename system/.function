@@ -13,6 +13,11 @@ get() {
   echo "${!1}"
 }
 
+# Add to path
+prepend-path() {
+  [ -d $1 ] && PATH="$1:$PATH"
+}
+
 # Show 256 TERM colors
 colors() {
   local X=$(tput op)
@@ -28,7 +33,18 @@ md() {
   pandoc $1 | lynx -stdin -dump
 }
 
-# cd into freshly cloned dir
-clone_into() {
-  git clone $1 && cd $1
+# https://unix.stackexchange.com/questions/97920/how-to-cd-automatically-after-git-clone
+# cd into freshly `git clone` dir
+git_clone_into() {
+  git clone $1 && cd "$(basename "$1")"
+}
+
+# cd into freshly `svn co` dir
+svn_checkout_into() {
+  svn co $1 && cd "$(basename "$1")"
+}
+
+# Create a new directory and enter it
+mk() {
+  mkdir -p "$@" && cd "$@"
 }
