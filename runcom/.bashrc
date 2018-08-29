@@ -32,15 +32,15 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Source dotfiles (order matters)
 for DOTFILE in "$DOTFILES_DIR"/system/.{function,path,env,alias,prompt,vimrc}; do
-	[ -f  "$DOTFILE" ] && soucre "$DOTFILE"
+	[ -f  "$DOTFILE" ] && . "$DOTFILE"
 done
 
 # Hook for extra/custom stuff
 DOTFILES_EXTRA_DIR="$HOME/.extra"
 
 if [ -d "$DOTFILES_EXTRA_DIR" ]; then
-  for EXTRAFILE in "$DOTFILES_EXTRA_DIR"/runcom/*.sh; do
-    [ -f "$EXTRAFILE" ] && source "$EXTRAFILE"
+  for EXTRAFILE in "$DOTFILES_EXTRA_DIR"/runcom/.*; do
+    [ -f "$EXTRAFILE" ] && . "$EXTRAFILE"
   done
 fi
 

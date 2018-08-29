@@ -20,3 +20,9 @@
 
 [fetch]
 	prune = true
+
+[credential]
+	helper = cache
+
+[push]
+	default = simple
