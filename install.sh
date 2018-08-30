@@ -22,8 +22,6 @@ ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
 ln -sfv "$DOTFILES_DIR/git/.git-prompt.sh" ~
 ln -sfv "$DOTFILES_DIR/vim/.vimrc" ~
 
-source ~/.bash_profile
-
 # Install extra stuff
 if [ -d "$DOTFILES_EXTRA_DIR" -a -f "$DOTFILES_EXTRA_DIR/install.sh" ] ;then
   . "$DOTFILES_EXTRA_DIR/install.sh"
