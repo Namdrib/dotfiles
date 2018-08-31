@@ -45,7 +45,7 @@ fi
 PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Source dotfiles (order matters)
-for DOTFILE in "$DOTFILES_DIR"/system/.{function,path,env,alias,prompt}; do
+for DOTFILE in "$DOTFILES_DIR"/system/.{function,function_*,path,env,alias,grep,prompt}; do
 	[ -f  "$DOTFILE" ] && . "$DOTFILE"
 done
 
