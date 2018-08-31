@@ -9,4 +9,4 @@ Extra stuff can be added locally at `$HOME/.extra` (per-machine), which will be 
 
 `.bash_profile` calls `.bashrc`, which loads things
 
-TODO : installation
+run `./install.sh` to symlink the dotfiles into `~`. Warning: does not make backups of existing dotfiles.
