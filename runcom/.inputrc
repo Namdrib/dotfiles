@@ -34,3 +34,7 @@ set convert-meta off
 # Filtered history search
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+
+# Skip words at a time
+"\e[1;5C": forward-word   # ctrl + right
+"\e[1;5D": backward-word  # ctrl + left
