@@ -7,7 +7,7 @@ _bash_prompt_config() {
   local ESC_OPEN="\["
   local ESC_CLOSE="\]"
 
-  if tput setaf >/dev/null 2>&1 ; then
+  if tput setaf >/dev/null 2>&1 ;then
     _setaf () { tput setaf "$1" ; }
     local RESET="${ESC_OPEN}$( { tput sgr0 || tput me ; } 2>/dev/null )${ESC_CLOSE}"
     local BOLD="$( { tput bold || tput md ; } 2>/dev/null )"
@@ -78,15 +78,18 @@ bash_prompt_command() {
   fi
 
   # Update terminal title
-  if [[ $TERM == xterm* ]]; then
+  if [[ $TERM == xterm* ]] ;then
     echo -ne "\033]0;${P_PWD}\007"
   fi
 
   # Parse Git branch name
   P_GIT=$(parse_git_branch)
 
+  # Parse venv info
+  VENV_TEXT=$(add_venv_info)
+
   # Exit code
-  if [[ $EXIT_CODE != 0 ]]; then
+  if [[ $EXIT_CODE != 0 ]] ;then
     T_COLOUR="${P_RED}"
   else
     T_COLOUR="${P_GREEN}"
@@ -100,12 +103,35 @@ bash_prompt_command() {
   # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;93m\]\w\[\033[00m\]\ $ '
   # PS1="[\[$(tput sgr0)\]\[\033[38;5;2m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\]] [\$?] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \\$\[$(tput sgr0)\] "
   # PS1="${debian_chroot:+($debian_chroot)}[\`if [ \$? = 0]; then echo \[\033[01;91m\]\t]\[\033[00m\]; else echo \[\033[01;92m\]\t\[\033[00m\]; fi\`] \[\033[01;93m\]\w\[\033[00m\] $ "
-  PS1="[${T_COLOUR}${P_TIME}${P_RESET}] [${P_YELLOW}${P_PWD}${P_RESET}]${P_GIT} [${P_WHITE}${P_NUM_FILES}, ${P_DIR_SIZE}${P_RESET}]\n$ "
+  PS1="${VENV_TEXT}[${T_COLOUR}${P_TIME}${P_RESET}] [${P_YELLOW}${P_PWD}${P_RESET}]${P_GIT} [${P_WHITE}${P_NUM_FILES}, ${P_DIR_SIZE}${P_RESET}]\n$ "
+}
+
+# https://stackoverflow.com/a/23408616/6247255
+add_venv_info() {
+  if [ -z "$VIRTUAL_ENV_DISABLE_PROMPT" ] ;then
+    VIRT_ENV_TXT=""
+    if [ "x" != x ] ;then
+      VIRT_ENV_TXT=""
+    else
+      if [ "$(basename "$VIRTUAL_ENV")" = "__" ] ;then
+        # special case for Aspen magic directories
+        # see http://www.zetadev.com/software/aspen/
+        VIRT_ENV_TXT="[$(basename $(dirname "$VIRTUAL_ENV"))]"
+      elif [ "$VIRTUAL_ENV" != "" ] ;then
+        VIRT_ENV_TXT="($(basename "$VIRTUAL_ENV"))"
+      fi
+    fi
+    if [ "${VIRT_ENV_TXT}" != "" ] ;then
+       echo "${VIRT_ENV_TXT} "
+    fi
+  fi
 }
 
 parse_git_branch() {
   local OUT=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-  if [ "$OUT" != "" ]; then echo " ($OUT)"; fi
+  if [ "$OUT" != "" ] ;then
+    echo " ($OUT)"
+  fi
 }
 
 [[ -f ~/.git-prompt.sh ]] && . ~/.git-prompt.sh
