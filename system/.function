@@ -48,3 +48,8 @@ svn_checkout_into() {
 mk() {
   mkdir -p "$@" && cd "$@"
 }
+
+# update and upgrade using apt-fast
+apt-all() {
+	sudo apt-fast update -y && sudo apt-fast upgrade -y
+}
