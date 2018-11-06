@@ -96,7 +96,7 @@ bash_prompt_command() {
   fi
 
   P_NUM_FILES="$(ls | wc -l) files"
-  P_DIR_SIZE="$(ls -lah | grep -m 1 total | sed 's/total //')"
+  P_DIR_SIZE="$(ls -lah 2> /dev/null | grep -m 1 total | sed 's/total //')"
 
   P_TIME="\t"
   # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;93m\]\w\[\033[00m\]\$ '
@@ -127,6 +127,10 @@ add_venv_info() {
   fi
 }
 
+# display the branch in parentheses. (e.g. (master))
+# have one star (e.g. (master* )) if there are unstaged files
+# have another (e.g. (master *)) if there are untracked files
+# both for both (e.g. (master**))
 parse_git_branch() {
   local OUT=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
   if [ "$OUT" != "" ] ;then
