@@ -21,6 +21,7 @@ ln -sfv "$DOTFILES_DIR/runcom/.bash_logout" ~
 ln -sfv "$DOTFILES_DIR/standalones/.gitconfig" ~
 ln -sfv "$DOTFILES_DIR/standalones/.gitignore_global" ~
 ln -sfv "$DOTFILES_DIR/standalones/.git-prompt.sh" ~
+ln -sfv "$DOTFILES_DIR/standalones/.tmux.conf" ~
 ln -sfv "$DOTFILES_DIR/standalones/.vimrc" ~
 
 # Install extra stuff
