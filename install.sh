@@ -18,6 +18,7 @@ fi
 ln -sfv "$DOTFILES_DIR/runcom/.bashrc" ~
 ln -sfv "$DOTFILES_DIR/runcom/.inputrc" ~
 ln -sfv "$DOTFILES_DIR/runcom/.bash_logout" ~
+ln -sfv "$DOTFILES_DIR/runcom/.zshrc" ~
 ln -sfv "$DOTFILES_DIR/standalones/.gitconfig" ~
 ln -sfv "$DOTFILES_DIR/standalones/.gitignore_global" ~
 ln -sfv "$DOTFILES_DIR/standalones/.git-prompt.sh" ~
