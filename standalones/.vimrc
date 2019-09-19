@@ -18,7 +18,6 @@ nmap <leader>w :w!<cr>
 command W w !sudo tee % > /dev/null
 
 
-
 """""
 " => VIM UI
 """""
@@ -59,6 +58,9 @@ set incsearch
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
 
+" Show (partial) commands
+set showcmd
+
 " Show matching brackets when text indicator is over them
 set showmatch
 " How many tenths of a second to blink when matching brackets
@@ -75,6 +77,7 @@ set foldcolumn=1
 
 " Show line numbers
 set nu
+set rnu
 
 
 """""
@@ -97,6 +100,7 @@ set ffs=unix,dos,mac
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Use spaces instead of tabs
 " set expandtab
 
@@ -110,10 +114,15 @@ set tabstop=4
 set ai "Auto indent
 set si "Smart indent
 
+" Show whitespace characters
+" set list
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
+
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
+
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
@@ -123,6 +132,7 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 map <c-space> ?
@@ -135,4 +145,3 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-
