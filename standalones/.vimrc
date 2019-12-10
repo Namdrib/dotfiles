@@ -79,6 +79,18 @@ set foldcolumn=1
 set nu
 set rnu
 
+" Highlight the current line
+set cursorline
+highlight CursorLine cterm=standout ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+
+" Toggle current line highlight
+nnoremap <leader>h :set cursorline!<CR>
+
+" Draw a vertical line at a given column
+set cc=
+call matchadd('ColorColumn', '\(\%80v\|\%>100v\)')
+highlight ColorColumn ctermbg=Magenta guibg=lightgrey
+
 
 """""
 " => Colours and Fonts
@@ -91,6 +103,7 @@ set background=dark
 
 " Use Unix default file type
 set ffs=unix,dos,mac
+
 
 """""
 " => Files, backups and undo
@@ -145,3 +158,17 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Spell checking
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Pressing ,ss will toggle spell checking
+map <leader>ss :setlocal spell!<cr>
+
+" Shortcuts using <leader>
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>s? z=
