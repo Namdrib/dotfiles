@@ -88,7 +88,7 @@ nnoremap <leader>h :set cursorline!<CR>
 
 " Draw a vertical line at a given column
 set cc=
-call matchadd('ColorColumn', '\(\%80v\|\%>100v\)')
+call matchadd('ColorColumn', '\%80v')
 highlight ColorColumn ctermbg=Magenta guibg=lightgrey
 
 
