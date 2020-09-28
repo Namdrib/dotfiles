@@ -15,17 +15,18 @@ if is-executable git -a -d "$DOTFILES_DIR/.git" ;then
 fi
 
 # Bunch of symlinks to ~
-ln -sfv "$DOTFILES_DIR/runcom/.bashrc" ~
-ln -sfv "$DOTFILES_DIR/runcom/.inputrc" ~
-ln -sfv "$DOTFILES_DIR/runcom/.bash_logout" ~
-ln -sfv "$DOTFILES_DIR/runcom/.zshrc" ~
-ln -sfv "$DOTFILES_DIR/standalones/.gitconfig" ~
-ln -sfv "$DOTFILES_DIR/standalones/.gitignore_global" ~
-ln -sfv "$DOTFILES_DIR/standalones/.git-prompt.sh" ~
-ln -sfv "$DOTFILES_DIR/standalones/.tmux.conf" ~
-ln -sfv "$DOTFILES_DIR/standalones/.vimrc" ~
+ln -sfv "$DOTFILES_DIR/runcom/bashrc" ~/.bashrc
+ln -sfv "$DOTFILES_DIR/runcom/inputrc" ~/.inputrc
+ln -sfv "$DOTFILES_DIR/runcom/bash_logout" ~/.bash_logout
+ln -sfv "$DOTFILES_DIR/runcom/zshrc" ~/.zshrc
+ln -sfv "$DOTFILES_DIR/standalones/gitconfig" ~/.gitconfig
+ln -sfv "$DOTFILES_DIR/standalones/gitignore_global" ~/.gitignore_global
+ln -sfv "$DOTFILES_DIR/standalones/git-prompt.sh" ~/.git-prompt.sh
+ln -sfv "$DOTFILES_DIR/standalones/tmux.conf" ~/.tmux.conf
+ln -sfv "$DOTFILES_DIR/standalones/vimrc" ~/.vimrc
 
 # Install extra stuff
 if [ -d "$DOTFILES_EXTRA_DIR" -a -f "$DOTFILES_EXTRA_DIR/install.sh" ] ;then
-  . "$DOTFILES_EXTRA_DIR/install.sh"
+  source "$DOTFILES_EXTRA_DIR/install.sh"
 fi
+
