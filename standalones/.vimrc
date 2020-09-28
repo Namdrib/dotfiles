@@ -1,11 +1,7 @@
 " as I get more comfortable, maybe experiment more with https://github.com/amix/vimrc
-" vim settings
+" vim: fdm=marker:
 
-
-"""""
-" => General
-"""""
-
+" General {{{
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -16,12 +12,9 @@ nmap <leader>w :w!<cr>
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
+" }}}
 
-
-"""""
-" => VIM UI
-"""""
-
+" VIM UI {{{
 " Turn on the Wild menu
 set wildmenu
 
@@ -90,12 +83,9 @@ nnoremap <leader>h :set cursorline!<CR>
 set cc=
 call matchadd('ColorColumn', '\%80v')
 highlight ColorColumn ctermbg=Magenta guibg=lightgrey
+" }}}
 
-
-"""""
-" => Colours and Fonts
-"""""
-
+" Colours and Fonts {{{
 " Enable syntax highlighting
 syntax enable
 
@@ -104,25 +94,23 @@ set background=dark
 " Use Unix default file type
 set ffs=unix,dos,mac
 
+" }}}
 
-"""""
-" => Files, backups and undo
-"""""
+" Files, backups and undo {{{
 
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Text, tab and indent related {{{
 
 " Use spaces instead of tabs
-" set expandtab
+set expandtab
 
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
 
 set ai "Auto indent
 set si "Smart indent
@@ -131,20 +119,18 @@ set si "Smart indent
 " set list
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
 
+" }}}
 
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
+" Visual mode related {{{
 
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, windows and buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Moving around, tabs, windows and buffers {{{
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
@@ -159,10 +145,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Spell checking {{{
 
 " Pressing ,ss will toggle spell checking
 map <leader>ss :setlocal spell!<cr>
@@ -172,3 +157,6 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
+
+" }}}
+
