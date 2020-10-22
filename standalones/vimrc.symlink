@@ -1,5 +1,5 @@
 " as I get more comfortable, maybe experiment more with https://github.com/amix/vimrc
-" vim: fdm=marker:
+" vim: fdm=marker ts=2 sw=2 noet
 
 " General {{{
 " With a map leader it's possible to do extra key combinations
@@ -21,9 +21,9 @@ set wildmenu
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
+	set wildignore+=.git\*,.hg\*,.svn\*
 else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+	set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
 " Always show current position

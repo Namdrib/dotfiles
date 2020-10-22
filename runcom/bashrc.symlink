@@ -1,3 +1,4 @@
+# vim: fdm=marker ts=2 sw=2 noet
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -9,8 +10,8 @@
 
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+	*i*) ;;
+	  *) return;;
 esac
 
 # make less more friendly for non-text input files, see lesspipe(1)
@@ -20,11 +21,11 @@ esac
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    source /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    source /etc/bash_completion
-  fi
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
+		source /usr/share/bash-completion/bash_completion
+	elif [ -f /etc/bash_completion ]; then
+		source /etc/bash_completion
+	fi
 fi
 
 # Resolve DOTFILES_DIR (assuming ~/.dotfiles on distros without readlink and/or $BASH_SOURCE/$0)
@@ -32,13 +33,13 @@ READLINK=$(which greadlink || which readlink)
 CURRENT_SCRIPT=$BASH_SOURCE
 
 if [[ -n $CURRENT_SCRIPT && -x "$READLINK" ]]; then
-  SCRIPT_PATH=$($READLINK -f "$CURRENT_SCRIPT")
-  DOTFILES_DIR=$(dirname "$(dirname "$SCRIPT_PATH")")
+	SCRIPT_PATH=$($READLINK -f "$CURRENT_SCRIPT")
+	DOTFILES_DIR=$(dirname "$(dirname "$SCRIPT_PATH")")
 elif [ -d "$HOME/.dotfiles" ]; then
-  DOTFILES_DIR="$HOME/.dotfiles"
+	DOTFILES_DIR="$HOME/.dotfiles"
 else
-  echo "Unable to find dotfiles, exiting."
-  return
+	echo "Unable to find dotfiles, exiting."
+	return
 fi
 
 # Make utilities available
@@ -46,16 +47,16 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Source dotfiles (order matters)
 for DOTFILE in "$DOTFILES_DIR"/system/{function,function_*,path,env,alias,grep,prompt}; do
-  [ -f  "$DOTFILE" ] && source "$DOTFILE"
+	[ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
 # Hook for extra/custom stuff
 DOTFILES_EXTRA_DIR="$HOME/.extra"
 
 if [ -d "$DOTFILES_EXTRA_DIR" ]; then
-  for EXTRAFILE in "$DOTFILES_EXTRA_DIR"/*; do
-    [ -f "$EXTRAFILE" ] && source "$EXTRAFILE"
-  done
+	for EXTRAFILE in "$DOTFILES_EXTRA_DIR"/*; do
+		[ -f "$EXTRAFILE" ] && source "$EXTRAFILE"
+	done
 fi
 
 # Clean up

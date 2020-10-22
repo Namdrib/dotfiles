@@ -1,5 +1,5 @@
 # tmux configuration
-# vim: set fdm=marker:set expandtab:ts=2:
+# vim: fdm=marker ts=2 sw=2 noet
 
 # set environment var TMUX_VERSION
 run-shell 'tmux setenv -g TMUX_VERSION $(tmux -V | \
@@ -24,13 +24,13 @@ set -g base-index 1
 
 # mouse stuff {{{
 if-shell -b '[ "$(echo "$TMUX_VERSION < 2.1" | bc)" = 1 ]' " \
-  set -g mode-mouse on; \
-  set -g mouse-resize-pane on; \
-  set -g mouse-select-window on; \
-  set -g mouse-select-pane on;"
+	set -g mode-mouse on; \
+	set -g mouse-resize-pane on; \
+	set -g mouse-select-window on; \
+	set -g mouse-select-pane on;"
 
 if-shell -b '[ "$(echo "$TMUX_VERSION >= 2.1" | bc)" = 1 ]' \
-  "set -g mouse on"
+	"set -g mouse on"
 # }}}
 
 setw -g mode-keys vi
@@ -72,14 +72,14 @@ bind O setw synchronize-panes off\; display-message "Synchronise Panes Off" \;
 
 # vi copy selection {{{
 if-shell -b '[ "$(echo "$TMUX_VERSION < 2.4" | bc)" = 1 ]' " \
-  bind -t vi-copy v begin-selection; \
-  bind -t vi-copy V send -X select-line; \
-  bind -t vi-copy y copy-selection; \
-  bind -t vi-copy Escape cancel;"
+	bind -t vi-copy v begin-selection; \
+	bind -t vi-copy V send -X select-line; \
+	bind -t vi-copy y copy-selection; \
+	bind -t vi-copy Escape cancel;"
 
 if-shell -b '[ "$(echo "$TMUX_VERSION >= 2.4" | bc)" = 1 ]' " \
-  bind-key -T copy-mode-vi 'v' send -X begin-selection; \
-  bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel;"
+	bind-key -T copy-mode-vi 'v' send -X begin-selection; \
+	bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel;"
 # }}}
 # }}}
 
