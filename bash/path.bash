@@ -23,3 +23,4 @@ prepend-path "$HOME/.rbenv/bin"
 PATH=$(echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
 
 export PATH
+

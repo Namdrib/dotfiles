@@ -46,7 +46,11 @@ fi
 PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Source dotfiles (order matters)
-for DOTFILE in "$DOTFILES_DIR"/system/{function,function_*,path,env,alias,grep,prompt}; do
+for DOTFILE in "$DOTFILES_DIR"/bash/{function,function_*}.bash; do
+	[ -f "$DOTFILE" ] && source "$DOTFILE"
+done
+
+for DOTFILE in "$DOTFILES_DIR"/bash/*.bash; do
 	[ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
@@ -64,3 +68,4 @@ unset READLINK CURRENT_SCRIPT SCRIPT_PATH DOTFILE DOTFILES_EXTRA_DIR EXTRAFILE
 
 # export
 export DOTFILES_DIR
+

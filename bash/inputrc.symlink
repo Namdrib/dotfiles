@@ -38,3 +38,4 @@ set convert-meta off
 # Skip words at a time
 "\e[1;5C": forward-word   # ctrl + right
 "\e[1;5D": backward-word  # ctrl + left
+

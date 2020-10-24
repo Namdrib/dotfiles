@@ -5,7 +5,7 @@ ps0() {
 }
 
 ps1() {
-  . "$DOTFILES_DIR"/system/.prompt
+  . "$DOTFILES_DIR"/bash/.prompt
 }
 
 # Get named var (usage: get "VAR_NAME")
@@ -53,3 +53,4 @@ mk() {
 apt-all() {
 	sudo apt-fast update -y && sudo apt-fast upgrade -y
 }
+
