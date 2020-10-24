@@ -53,3 +53,4 @@ mk() {
 apt-all() {
 	sudo apt-fast update -y && sudo apt-fast upgrade -y
 }
+
