@@ -5,7 +5,7 @@ ps0() {
 }
 
 ps1() {
-  . "$DOTFILES_DIR"/system/.prompt
+  . "$DOTFILES_DIR"/bash/.prompt
 }
 
 # Get named var (usage: get "VAR_NAME")
