@@ -53,7 +53,8 @@ _bash_prompt_config() {
   P_USER=${BRIGHT_GREEN}${USER_SYMBOL}
   P_HOST=${CYAN}${HOST_SYMBOL}
   P_WHITE=${WHITE}
-  P_GREEN=${BRIGHT_GREEN}
+  P_GREEN=${GREEN}
+  P_BRIGHT_GREEN=${BRIGHT_GREEN}
   P_YELLOW=${BRIGHT_YELLOW}
   P_RED=${BRIGHT_RED}
   P_RESET=${RESET}
@@ -103,7 +104,7 @@ bash_prompt_command() {
   # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;93m\]\w\[\033[00m\]\ $ '
   # PS1="[\[$(tput sgr0)\]\[\033[38;5;2m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\]] [\$?] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \\$\[$(tput sgr0)\] "
   # PS1="${debian_chroot:+($debian_chroot)}[\`if [ \$? = 0]; then echo \[\033[01;91m\]\t]\[\033[00m\]; else echo \[\033[01;92m\]\t\[\033[00m\]; fi\`] \[\033[01;93m\]\w\[\033[00m\] $ "
-  PS1="${VENV_TEXT}[${T_COLOUR}${P_TIME}${P_RESET}] [${P_YELLOW}${P_PWD}${P_RESET}]${P_GIT} [${P_WHITE}${P_NUM_FILES}, ${P_DIR_SIZE}${P_RESET}]\n$ "
+  PS1="${VENV_TEXT}[${T_COLOUR}${P_TIME}${P_RESET}] [${P_BRIGHT_GREEN}\u${P_RESET}@${P_GREEN}\h${P_RESET}] [${P_YELLOW}${P_PWD}${P_RESET}]${P_GIT} [${P_WHITE}${P_NUM_FILES}, ${P_DIR_SIZE}${P_RESET}]\n$ "
 }
 
 # https://stackoverflow.com/a/23408616/6247255
