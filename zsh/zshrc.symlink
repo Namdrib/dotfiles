@@ -112,3 +112,11 @@ compinit
 
 bindkey '^R' history-incremental-pattern-search-backward
 
+cdpath=(. ~)
+
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format %d
+zstyle ':completion:*:descriptions' format %B%d%b
+zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
+        'local-directories named-directories path-directories'
+
