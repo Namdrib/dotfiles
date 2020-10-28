@@ -25,6 +25,8 @@ shopt -s checkwinsize
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
+complete -d cd
+
 # Do not autocomplete when accidentally pressing Tab on an empty line.
 shopt -s no_empty_cmd_completion
 
@@ -71,4 +73,14 @@ export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
 # opt out of dotnet CLI telemetry
 DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+### START CDPATH
+CDPATH=".:~"
+
+if [ -d ~/.paths ]; then
+  CDPATH="$CDPATH:~/.paths"
+fi
+
+export CDPATH
+### END CDPATH
 
