@@ -114,6 +114,10 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 cdpath=(. ~)
 
+if [ -d ~/.paths ]; then
+  cdpath+=(~/.paths)
+fi
+
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format %d
 zstyle ':completion:*:descriptions' format %B%d%b
