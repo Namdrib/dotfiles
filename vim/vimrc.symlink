@@ -162,20 +162,25 @@ map <leader>s? z=
 
 " Plugins {{{
 
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+" only do the following if .vim/plugged exists
+if !empty(glob('~/.vim/autoload/plug.vim'))
 
-" Must use single quotes
+	" Specify a directory for plugins
+	" - For Neovim: stdpath('data') . '/plugged'
+	" - Avoid using standard Vim directory names like 'plugin'
+	call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
+	" Must use single quotes
 
-call plug#end()
+	Plug 'tpope/vim-commentary'
+	Plug 'tpope/vim-repeat'
+	Plug 'tpope/vim-sensible'
+	Plug 'tpope/vim-surround'
+	Plug 'vim-airline/vim-airline'
+
+	call plug#end()
+
+endif
 
 " }}}
 
