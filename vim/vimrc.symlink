@@ -98,6 +98,9 @@ set ffs=unix,dos,mac
 
 " Files, backups and undo {{{
 
+" strip trialing whitespace from these files
+autocmd FileType c,cpp,java,python autocmd BufWritePre <buffer> %s/\s\+$//e
+
 " }}}
 
 " Text, tab and indent related {{{
