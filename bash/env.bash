@@ -69,7 +69,8 @@ is-executable thefuck && eval "$(thefuck --alias)"
 
 # python venv stuff
 export WORKON_HOME=~/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+VIRTUALENVWRAPPER_PYTHON=$(which python3)
+export VIRTUALENVWRAPPER_PYTHON
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 
 # opt out of dotnet CLI telemetry

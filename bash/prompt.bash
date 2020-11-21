@@ -2,52 +2,83 @@
 
 _bash_prompt_config() {
 
-	local USER_SYMBOL="\u"
-	local HOST_SYMBOL="\h"
-	local ESC_OPEN="\["
-	local ESC_CLOSE="\]"
+	local USER_SYMBOL
+	USER_SYMBOL="\u"
+	local HOST_SYMBOL
+	HOST_SYMBOL="\h"
+	local ESC_OPEN
+	ESC_OPEN="\["
+	local ESC_CLOSE
+	ESC_CLOSE="\]"
 
 	if tput setaf >/dev/null 2>&1; then
 		_setaf () { tput setaf "$1" ; }
-		local RESET="${ESC_OPEN}$( { tput sgr0 || tput me ; } 2>/dev/null )${ESC_CLOSE}"
-		local BOLD="$( { tput bold || tput md ; } 2>/dev/null )"
+		local RESET
+		RESET="${ESC_OPEN}$( { tput sgr0 || tput me ; } 2>/dev/null )${ESC_CLOSE}"
+		local BOLD
+		BOLD="$( { tput bold || tput md ; } 2>/dev/null )"
 	else
 		# Fallback
 		_setaf () { echo "\033[0;$(($1+30))m" ; }
-		local RESET="\033[m"
-		local BOLD=""
+		local RESET
+		RESET="\033[m"
+		local BOLD
+		BOLD=""
 		ESC_OPEN=""
 		ESC_CLOSE=""
 	fi
 
 	# Normal colors
-	local BLACK="${ESC_OPEN}$(_setaf 0)${ESC_CLOSE}"
-	local RED="${ESC_OPEN}$(_setaf 1)${ESC_CLOSE}"
-	local GREEN="${ESC_OPEN}$(_setaf 2)${ESC_CLOSE}"
-	local YELLOW="${ESC_OPEN}$(_setaf 3)${ESC_CLOSE}"
-	local BLUE="${ESC_OPEN}$(_setaf 4)${ESC_CLOSE}"
-	local VIOLET="${ESC_OPEN}$(_setaf 5)${ESC_CLOSE}"
-	local CYAN="${ESC_OPEN}$(_setaf 6)${ESC_CLOSE}"
-	local WHITE="${ESC_OPEN}$(_setaf 7)${ESC_CLOSE}"
+	local BLACK
+	BLACK="${ESC_OPEN}$(_setaf 0)${ESC_CLOSE}"
+	local RED
+	RED="${ESC_OPEN}$(_setaf 1)${ESC_CLOSE}"
+	local GREEN
+	GREEN="${ESC_OPEN}$(_setaf 2)${ESC_CLOSE}"
+	local YELLOW
+	YELLOW="${ESC_OPEN}$(_setaf 3)${ESC_CLOSE}"
+	local BLUE
+	BLUE="${ESC_OPEN}$(_setaf 4)${ESC_CLOSE}"
+	local VIOLET
+	VIOLET="${ESC_OPEN}$(_setaf 5)${ESC_CLOSE}"
+	local CYAN
+	CYAN="${ESC_OPEN}$(_setaf 6)${ESC_CLOSE}"
+	local WHITE
+	WHITE="${ESC_OPEN}$(_setaf 7)${ESC_CLOSE}"
 
 	# Bright colors
-	local BRIGHT_RED="${ESC_OPEN}$(_setaf 9)${ESC_CLOSE}"
-	local BRIGHT_GREEN="${ESC_OPEN}$(_setaf 10)${ESC_CLOSE}"
-	local BRIGHT_YELLOW="${ESC_OPEN}$(_setaf 11)${ESC_CLOSE}"
-	local BRIGHT_BLUE="${ESC_OPEN}$(_setaf 12)${ESC_CLOSE}"
-	local BRIGHT_VIOLET="${ESC_OPEN}$(_setaf 13)${ESC_CLOSE}"
-	local BRIGHT_CYAN="${ESC_OPEN}$(_setaf 14)${ESC_CLOSE}"
-	local BRIGHT_WHITE="${ESC_OPEN}$(_setaf 15)${ESC_CLOSE}"
+	local BRIGHT_RED
+	BRIGHT_RED="${ESC_OPEN}$(_setaf 9)${ESC_CLOSE}"
+	local BRIGHT_GREEN
+	BRIGHT_GREEN="${ESC_OPEN}$(_setaf 10)${ESC_CLOSE}"
+	local BRIGHT_YELLOW
+	BRIGHT_YELLOW="${ESC_OPEN}$(_setaf 11)${ESC_CLOSE}"
+	local BRIGHT_BLUE
+	BRIGHT_BLUE="${ESC_OPEN}$(_setaf 12)${ESC_CLOSE}"
+	local BRIGHT_VIOLET
+	BRIGHT_VIOLET="${ESC_OPEN}$(_setaf 13)${ESC_CLOSE}"
+	local BRIGHT_CYAN
+	BRIGHT_CYAN="${ESC_OPEN}$(_setaf 14)${ESC_CLOSE}"
+	local BRIGHT_WHITE
+	BRIGHT_WHITE="${ESC_OPEN}$(_setaf 15)${ESC_CLOSE}"
 
 	# Bold colors
-	local BLACK_BOLD="${ESC_OPEN}${BOLD}$(_setaf 0)${ESC_CLOSE}"
-	local RED_BOLD="${ESC_OPEN}${BOLD}$(_setaf 1)${ESC_CLOSE}"
-	local GREEN_BOLD="${ESC_OPEN}${BOLD}$(_setaf 2)${ESC_CLOSE}"
-	local YELLOW_BOLD="${ESC_OPEN}${BOLD}$(_setaf 3)${ESC_CLOSE}"
-	local BLUE_BOLD="${ESC_OPEN}${BOLD}$(_setaf 4)${ESC_CLOSE}"
-	local VIOLET_BOLD="${ESC_OPEN}${BOLD}$(_setaf 5)${ESC_CLOSE}"
-	local CYAN_BOLD="${ESC_OPEN}${BOLD}$(_setaf 6)${ESC_CLOSE}"
-	local WHITE_BOLD="${ESC_OPEN}${BOLD}$(_setaf 7)${ESC_CLOSE}"
+	local BLACK_BOLD
+	BLACK_BOLD="${ESC_OPEN}${BOLD}$(_setaf 0)${ESC_CLOSE}"
+	local RED_BOLD
+	RED_BOLD="${ESC_OPEN}${BOLD}$(_setaf 1)${ESC_CLOSE}"
+	local GREEN_BOLD
+	GREEN_BOLD="${ESC_OPEN}${BOLD}$(_setaf 2)${ESC_CLOSE}"
+	local YELLOW_BOLD
+	YELLOW_BOLD="${ESC_OPEN}${BOLD}$(_setaf 3)${ESC_CLOSE}"
+	local BLUE_BOLD
+	BLUE_BOLD="${ESC_OPEN}${BOLD}$(_setaf 4)${ESC_CLOSE}"
+	local VIOLET_BOLD
+	VIOLET_BOLD="${ESC_OPEN}${BOLD}$(_setaf 5)${ESC_CLOSE}"
+	local CYAN_BOLD
+	CYAN_BOLD="${ESC_OPEN}${BOLD}$(_setaf 6)${ESC_CLOSE}"
+	local WHITE_BOLD
+	WHITE_BOLD="${ESC_OPEN}${BOLD}$(_setaf 7)${ESC_CLOSE}"
 
 	# Expose the variables we need in prompt command
 	P_USER=${BRIGHT_GREEN}${USER_SYMBOL}
@@ -62,16 +93,23 @@ _bash_prompt_config() {
 
 bash_prompt_command() {
 
+	# This must be one line otherwise EXIT_CODE is always true
 	local EXIT_CODE=$?
-	local T_COLOUR=""
-	local MAXLENGTH=35
-	local TRUNC_SYMBOL=".."
-	local DIR=${PWD##*/}
-	local P_PWD=${PWD/#$HOME/\~}
+	local T_COLOUR
+	T_COLOUR=""
+	local MAXLENGTH
+	MAXLENGTH=35
+	local TRUNC_SYMBOL
+	TRUNC_SYMBOL=".."
+	local DIR
+	DIR=${PWD##*/}
+	local P_PWD
+	P_PWD=${PWD/#$HOME/\~}
 
 	MAXLENGTH=$(( ( MAXLENGTH < ${#DIR} ) ? ${#DIR} : MAXLENGTH ))
 
-	local OFFSET=$(( ${#P_PWD} - MAXLENGTH ))
+	local OFFSET
+	OFFSET=$(( ${#P_PWD} - MAXLENGTH ))
 
 	if [ ${OFFSET} -gt "0" ]; then
 		P_PWD=${P_PWD:$OFFSET:$MAXLENGTH}
@@ -133,7 +171,8 @@ add_venv_info() {
 # have another (e.g. (master *)) if there are untracked files
 # both for both (e.g. (master**))
 parse_git_branch() {
-	local OUT=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+	local OUT
+	OUT=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
 	if [ "$OUT" != "" ]; then
 		echo " ($OUT)"
 	fi

@@ -20,11 +20,14 @@ prepend-path() {
 
 # Show 256 TERM colors
 colors() {
-	local X=$(tput op)
-	local Y=$(printf %$((COLUMNS-6))s)
+	local X
+	X=$(tput op)
+	local Y
+	Y=$(printf %$((COLUMNS-6))s)
+
 	for i in {0..256}; do
 		o=00$i;
-		echo -e ${o:${#o}-3:3} $(tput setaf "$i";tput setab "$i")"${Y// /=}""$X";
+		echo -e ${o:${#o}-3:3} "$(tput setaf "$i";tput setab "$i")""${Y// /=}""$X";
 	done
 }
 
