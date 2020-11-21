@@ -1,5 +1,5 @@
 " as I get more comfortable, maybe experiment more with https://github.com/amix/vimrc
-" vim: fdm=marker ts=2 sw=2 noet
+" vim: fdm=marker ts=2 sts=2 sw=2 noet
 
 " General {{{
 " With a map leader it's possible to do extra key combinations
@@ -30,7 +30,7 @@ endif
 set ruler
 
 " A buffer becomes hidden when it is abandoned
-set hid
+set hidden
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -69,8 +69,8 @@ set tm=500
 set foldcolumn=1
 
 " Show line numbers
-set nu
-set rnu
+set number
+set relativenumber
 
 " Highlight the current line
 set cursorline
@@ -105,18 +105,19 @@ autocmd FileType c,cpp,java,python autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " Text, tab and indent related {{{
 
-" Use spaces instead of tabs
-set expandtab
+" Use tabs instead of spaces
+set noexpandtab
 
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 2 spaces
+" Compact tabs
 set shiftwidth=2
+set softtabstop=2
 set tabstop=2
 
-set ai "Auto indent
-set si "Smart indent
+set autoindent
+set smartindent
 
 " Show whitespace characters
 " set list
@@ -174,12 +175,12 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 	call plug#begin('~/.vim/plugged')
 
 	" Must use single quotes
-
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-sensible'
 	Plug 'tpope/vim-surround'
 	Plug 'vim-airline/vim-airline'
+	Plug 'editorconfig/editorconfig-vim'
 
 	call plug#end()
 
