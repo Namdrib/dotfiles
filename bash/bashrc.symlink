@@ -30,10 +30,9 @@ if ! shopt -oq posix; then
 fi
 
 # Resolve DOTFILES_DIR (assuming ~/.dotfiles on distros without readlink and/or $BASH_SOURCE/$0)
-READLINK=$(which greadlink || which readlink)
+READLINK=$(which greadlink 2> /dev/null || which readlink)
 CURRENT_SCRIPT="$BASH_SOURCE"
 
-echo "CURRENT_SCRIPT: $CURRENT_SCRIPT"
 if [[ -n $CURRENT_SCRIPT && -x "$READLINK" ]]; then
 	SCRIPT_PATH=$($READLINK -f "$CURRENT_SCRIPT")
 	DOTFILES_DIR="$(dirname "$(dirname "$SCRIPT_PATH")")"
@@ -44,8 +43,6 @@ else
 	return
 fi
 
-echo "DOTFILES_DIR: $DOTFILES_DIR"
-
 # Make utilities available
 PATH="$DOTFILES_DIR/bin:$PATH"
 
@@ -54,7 +51,7 @@ BASH_FILES=(function function_fs path alias grep prompt env)
 
 for BASH_FILE in "${BASH_FILES[@]}"; do
 	BASH_FILE="$DOTFILES_DIR/bash/$BASH_FILE.bash"
-	[ -f "$BASH_FILE" ] && source "$BASH_FILE" && echo "$BASH_FILE"
+	[ -f "$BASH_FILE" ] && source "$BASH_FILE"
 done
 
 # Hook for extra/custom stuff
