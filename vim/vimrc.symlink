@@ -72,9 +72,9 @@ set foldcolumn=1
 set number
 set relativenumber
 
-" Highlight the current line
+" Underline the current line
 set cursorline
-highlight CursorLine cterm=standout ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+"highlight CursorLine cterm=standout ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 
 " Toggle current line highlight
 nnoremap <leader>h :set cursorline!<CR>
@@ -112,9 +112,9 @@ set noexpandtab
 set smarttab
 
 " Compact tabs
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=0 " uses the value of tabstop
+set softtabstop=-1 " uses the value of shiftwidth
+set tabstop=2 " set this one and the others will follow
 
 set autoindent
 set smartindent
