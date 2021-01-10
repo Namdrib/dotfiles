@@ -22,6 +22,9 @@ shopt -s checkwinsize
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
 
+# allow bash wildcard globbing to match dotfiles
+shopt -s dotglob
+
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
