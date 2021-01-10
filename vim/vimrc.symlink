@@ -26,6 +26,9 @@ else
 	set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
+" Use modelines
+set modeline
+
 " Always show current position
 set ruler
 
