@@ -7,6 +7,9 @@ HISTCONTROL=ignoreboth:erasedups
 # enable colours
 export CLICOLOR=1
 
+# useful for sudoedit, etc.
+is-executable && export EDITOR=vim
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 
