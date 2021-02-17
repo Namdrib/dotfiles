@@ -167,6 +167,13 @@ map <leader>s? z=
 
 " }}}
 
+" Functions {{{
+
+command! Date :normal a<C-R>=strftime('%F')<CR>
+command! Timestamp :normal a<C-R>=strftime('%F %T')<CR>
+
+" }}}
+
 " Plugins {{{
 
 " only do the following if .vim/plugged exists
