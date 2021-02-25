@@ -191,10 +191,15 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 	Plug 'tpope/vim-surround'
 	Plug 'vim-airline/vim-airline'
 	Plug 'editorconfig/editorconfig-vim'
+	Plug 'morhetz/gruvbox'
 
 	call plug#end()
 
 endif
 
-" }}}
+# use the gruvbox theme if available
+if !empty(glob('~/.vim/pack/default/start/gruvbox'))
+	autocmd vimenter * ++nested colorscheme gruvbox
+endif
 
+" }}}
