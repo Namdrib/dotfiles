@@ -197,7 +197,7 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 
 endif
 
-# use the gruvbox theme if available
+" use the gruvbox theme if available
 if !empty(glob('~/.vim/pack/default/start/gruvbox'))
 	autocmd vimenter * ++nested colorscheme gruvbox
 endif
