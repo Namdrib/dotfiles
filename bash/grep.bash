@@ -17,4 +17,3 @@ fi
 unset PATTERN
 alias grep='grep $GREP_OPTIONS'
 export GREP_COLOR='1;32'
-
