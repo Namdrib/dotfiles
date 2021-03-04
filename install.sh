@@ -29,4 +29,3 @@ done
 if [ -d "$DOTFILES_EXTRA_DIR" ] && [ -f "$DOTFILES_EXTRA_DIR/install.sh" ] ;then
 	source "$DOTFILES_EXTRA_DIR/install.sh"
 fi
-

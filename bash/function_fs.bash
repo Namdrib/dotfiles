@@ -8,4 +8,3 @@ fdf() { find . -type d -iname "*$1*";}
 fg() { find . -iname "$1" -exec grep -n "$2" {} +;}
 ffg() { find . -type f -iname "$1" -exec grep -n "$2" {} +;}
 fdg() { find . -type d -iname "$1" -exec grep -n "$2" {} +;}
-

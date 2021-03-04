@@ -31,4 +31,3 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Directory stuff
 alias mkdir='mkdir -pv'
-
