@@ -199,7 +199,14 @@ endif
 
 " use the gruvbox theme if available
 if !empty(glob('~/.vim/pack/default/start/gruvbox'))
+			\ || !empty(glob('~/.vim/plugged/gruvbox'))
 	autocmd vimenter * ++nested colorscheme gruvbox
+
+	" apply to airline too if installed
+	if !empty(glob('~/.vim/pack/vim-airline/start/vim-airline'))
+				\ || !empty(glob('~/.vim/plugged/vim-airline'))
+		let g:airline_theme='gruvbox'
+	endif
 endif
 
 " }}}
