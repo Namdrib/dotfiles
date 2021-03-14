@@ -126,6 +126,13 @@ zstyle ':completion:*:descriptions' format %B%d%b
 zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
         'local-directories named-directories path-directories'
 
+# source any extra machine/user-specific configs
+if [ -d ~/.extra ]; then
+	for item in ~/.extra/*; do
+		source "$item"
+	done
+fi
+
 setopt append_history
 # To clear session history, call `erase_history` then `fc -R`
 function erase_history { local HISTSIZE=0; }
