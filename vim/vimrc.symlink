@@ -176,7 +176,7 @@ command! Timestamp :normal a<C-R>=strftime('%F %T')<CR>
 
 " Plugins {{{
 
-" only do the following if .vim/plugged exists
+" Install plugins if .vim/plugged exists " {{{
 if !empty(glob('~/.vim/autoload/plug.vim'))
 
 	" Specify a directory for plugins
@@ -189,9 +189,15 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-sensible'
 	Plug 'tpope/vim-surround'
-	Plug 'vim-airline/vim-airline'
+
 	Plug 'editorconfig/editorconfig-vim'
+
+	Plug 'vim-airline/vim-airline'
 	Plug 'morhetz/gruvbox'
+	Plug 'nathanaelkane/vim-indent-guides'
+
+	Plug 'justinmk/vim-sneak'
+	Plug 'easymotion/vim-easymotion'
 
 	call plug#end()
 
@@ -208,5 +214,12 @@ if !empty(glob('~/.vim/pack/default/start/gruvbox'))
 		let g:airline_theme='gruvbox'
 	endif
 endif
+
+" }}}
+
+" Plugin-specific mappings {{{
+map <leader> <Plug>(easymotion-prefix)
+
+" }}}
 
 " }}}
