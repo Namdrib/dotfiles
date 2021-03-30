@@ -21,15 +21,13 @@
 
 [fetch]
 	prune = true
+[push]
+	default = simple
+[pull]
+	rebase = false
 
 [credential]
 	helper = cache
-
-[push]
-	default = simple
-
-[pull]
-	rebase = false
 
 [diff "word"]
 	textconv = strings
