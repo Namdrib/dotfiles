@@ -35,3 +35,6 @@
 	textconv = strings
 [diff "zip"]
 	textconv = unzip -c -a
+
+[include]
+	path = ~/.gitconfig_local
