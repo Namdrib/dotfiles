@@ -10,10 +10,28 @@
 	attributesfile = ~/.gitattributes
 
 [alias]
-	br = branch
-	ci = commit
+	# branch
+	b = branch
+	bc = checkout -b
+	bd = branch -d
+	bl = branch -v
+
+	# commit
+	c = commit -v
+	ca = commit --all -v
+
+	# checkout/fetch/merge
 	co = checkout
+	f = fetch
 	p = push
+	m = merge
+
+	# diff
+	d = diff
+	ds = diff --staged
+	dc = diff --staged
+
+	# other
 	st = status
 
 [color]
