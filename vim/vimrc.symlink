@@ -164,6 +164,9 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
+map <leader>su zw
+
+hi SpellBad cterm=underline ctermfg=red
 
 " }}}
 
@@ -215,6 +218,8 @@ if !empty(glob('~/.vim/pack/default/start/gruvbox'))
 				\ || !empty(glob('~/.vim/plugged/vim-airline'))
 		let g:airline_theme='gruvbox'
 	endif
+
+	let g:gruvbox_guisp_as_guifg=1
 endif
 
 " }}}
