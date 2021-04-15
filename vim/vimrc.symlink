@@ -175,6 +175,13 @@ hi SpellBad cterm=underline ctermfg=red
 command! Date :normal a<C-R>=strftime('%F')<CR>
 command! Timestamp :normal a<C-R>=strftime('%F %T')<CR>
 
+" Return true if a plugin is installed
+function PluginInstalled(plugin)
+	return !empty(glob('~/.vim/pack/' . a:plugin . '/start/' . a:plugin))
+				\ || !empty(glob('~/.vim/pack/default/start/' . a:plugin))
+				\ || !empty(glob('~/.vim/plugged/' . a:plugin))
+endfunction
+
 " }}}
 
 " Plugins {{{
@@ -209,13 +216,11 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 " use the gruvbox theme if available
-if !empty(glob('~/.vim/pack/default/start/gruvbox'))
-			\ || !empty(glob('~/.vim/plugged/gruvbox'))
+if PluginInstalled('gruvbox')
 	autocmd vimenter * ++nested colorscheme gruvbox
 
 	" apply to airline too if installed
-	if !empty(glob('~/.vim/pack/vim-airline/start/vim-airline'))
-				\ || !empty(glob('~/.vim/plugged/vim-airline'))
+	if PluginInstalled('vim-airline')
 		let g:airline_theme='gruvbox'
 	endif
 
