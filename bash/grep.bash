@@ -1,3 +1,5 @@
+# vim: fdm=marker ts=2 sts=-1 sw=0 noet
+
 # Tell grep to highlight matches
 if is-supported "grep --color a <<< a"; then
 	GREP_OPTIONS+=" --color=auto"

@@ -1,3 +1,5 @@
+# vim: fdm=marker ts=2 sts=-1 sw=0 noet
+
 # Switch long/short prompt
 ps0() {
 	unset PROMPT_COMMAND

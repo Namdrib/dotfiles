@@ -1,5 +1,5 @@
 # tmux configuration
-# vim: fdm=marker ts=2 sw=2 noet
+# vim: fdm=marker ts=2 sts=-1 sw=0 noet
 
 # set environment var TMUX_VERSION
 run-shell 'tmux setenv -g TMUX_VERSION $(tmux -V | \
@@ -122,3 +122,4 @@ setw -g window-status-bell-style 'fg=colour255 bg=colour1 bold'
 set -g message-style 'fg=colour232 bg=colour12 bold'
 
 # }}}
+

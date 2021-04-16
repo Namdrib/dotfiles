@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# vim: fdm=marker ts=2 sw=2 noet
+# vim: fdm=marker ts=2 sts=-1 sw=0 noet
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples

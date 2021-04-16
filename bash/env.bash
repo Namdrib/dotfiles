@@ -1,4 +1,4 @@
-# export EDITOR="vim"
+# vim: fdm=marker ts=2 sts=-1 sw=0 noet
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -8,7 +8,7 @@ HISTCONTROL=ignoreboth:erasedups
 export CLICOLOR=1
 
 # useful for sudoedit, etc.
-is-executable && export EDITOR=vim
+is-executable vim && export EDITOR=vim
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -39,7 +39,7 @@ shopt -s no_empty_cmd_completion
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-### START ssh-agent
+# ssh-agent {{{
 env=~/.ssh/agent.env
 
 agent_load_env () { test -f "$env" && source "$env" >| /dev/null ; }
@@ -61,19 +61,19 @@ elif [ "$SSH_AUTH_SOCK" ] && [ "$agent_run_state" = 1 ]; then
 	ssh-add
 fi
 unset env
-### END ssh-agent
+# ssh-agent }}}
 
-# X stuff
+# X
 # export DISPLAY=localhost:0.0
 export LIBGL_ALWAYS_INDIRECT=1
 
-# Ruby stuff
+# Ruby
 is-executable rbenv && eval "$(rbenv init -)"
 
 # thefuck
 is-executable thefuck && eval "$(thefuck --alias)"
 
-# python venv stuff
+# python venv
 export WORKON_HOME=~/.virtualenvs
 VIRTUALENVWRAPPER_PYTHON=$(which python3)
 export VIRTUALENVWRAPPER_PYTHON
@@ -82,7 +82,7 @@ export VIRTUALENVWRAPPER_PYTHON
 # opt out of dotnet CLI telemetry
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
-### START CDPATH
+# cdpath {{{
 CDPATH=".:~"
 
 if [ -d ~/.paths ]; then
@@ -90,4 +90,4 @@ if [ -d ~/.paths ]; then
 fi
 
 export CDPATH
-### END CDPATH
+# cdpath }}}

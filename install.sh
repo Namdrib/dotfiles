@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# vim: fdm=marker ts=2 sts=-1 sw=0 noet
 
 # Get current dir (so run this script from anywhere)
 export DOTFILES_DIR DOTFILES_CACHE DOTFILES_EXTRA_DIR DOTFILES_HOME

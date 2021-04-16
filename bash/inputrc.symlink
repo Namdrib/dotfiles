@@ -1,3 +1,5 @@
+# vim: fdm=marker ts=2 sts=-1 sw=0 noet
+
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
 

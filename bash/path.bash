@@ -1,3 +1,5 @@
+# vim: fdm=marker ts=2 sts=-1 sw=0 noet
+
 # Add things to the path
 
 # Start with system path
