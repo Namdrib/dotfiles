@@ -189,7 +189,7 @@ endfunction
 
 " Plugins {{{
 
-" Install plugins if .vim/plugged exists " {{{
+" Install plugins " {{{
 if !empty(glob('~/.vim/autoload/plug.vim'))
 
 	" Specify a directory for plugins
@@ -218,7 +218,7 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 	call plug#end()
 
 endif
-"
+
 " }}}
 
 " Configure plugins " {{{
