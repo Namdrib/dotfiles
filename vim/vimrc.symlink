@@ -104,6 +104,8 @@ set ffs=unix,dos,mac
 " strip trialing whitespace from these files
 autocmd FileType c,cpp,java,python autocmd BufWritePre <buffer> %s/\s\+$//e
 
+let g:markdown_folding = 1
+
 " }}}
 
 " Text, tab and indent related {{{
