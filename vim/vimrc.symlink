@@ -127,6 +127,7 @@ set smartindent
 " Show whitespace characters
 " set list
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
+nnoremap <leader>l <esc>:set list!<cr>
 
 " }}}
 
