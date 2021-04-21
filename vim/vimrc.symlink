@@ -210,6 +210,7 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 	Plug 'vim-airline/vim-airline'
 	Plug 'morhetz/gruvbox'
 	Plug 'nathanaelkane/vim-indent-guides'
+	Plug 'junegunn/rainbow_parentheses.vim'
 
 	Plug 'justinmk/vim-sneak'
 	Plug 'easymotion/vim-easymotion'
@@ -217,7 +218,10 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 	call plug#end()
 
 endif
+"
+" }}}
 
+" Configure plugins " {{{
 " use the gruvbox theme if available
 if PluginInstalled('gruvbox')
 	autocmd vimenter * ++nested colorscheme gruvbox
@@ -228,6 +232,12 @@ if PluginInstalled('gruvbox')
 	endif
 
 	let g:gruvbox_guisp_as_guifg=1
+
+	let g:gruvbox_contrast_dark='hard'
+endif
+
+if PluginInstalled('rainbow_parentheses.vim')
+	let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
 endif
 
 " }}}
