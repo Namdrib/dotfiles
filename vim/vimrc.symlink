@@ -248,3 +248,10 @@ map <leader> <Plug>(easymotion-prefix)
 " }}}
 
 " }}}
+
+" Local override {{{
+let $LOCALFILE=expand("~/.vimrc_local")
+if filereadable($LOCALFILE)
+	source $LOCALFILE
+endif
+" }}}
