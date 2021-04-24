@@ -1,7 +1,7 @@
 " as I get more comfortable, maybe experiment more with https://github.com/amix/vimrc
 " vim: fdm=marker ts=2 sts=-1 sw=0 noet
 
-" General {{{
+" General {{{1
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -12,9 +12,8 @@ nmap <leader>w :w!<cr>
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
-" }}}
 
-" VIM UI {{{
+" VIM UI {{{1
 " Turn on the Wild menu
 set wildmenu
 
@@ -86,9 +85,8 @@ nnoremap <leader>h :set cursorline!<CR>
 set cc=
 call matchadd('ColorColumn', '\%80v')
 highlight ColorColumn ctermbg=Magenta guibg=lightgrey
-" }}}
 
-" Colours and Fonts {{{
+" Colours and Fonts {{{1
 " Enable syntax highlighting
 syntax enable
 
@@ -97,19 +95,13 @@ set background=dark
 " Use Unix default file type
 set ffs=unix,dos,mac
 
-" }}}
-
-" Files, backups and undo {{{
-
+" Files, backups and undo {{{1
 " strip trialing whitespace from these files
 autocmd FileType c,cpp,java,python autocmd BufWritePre <buffer> %s/\s\+$//e
 
 let g:markdown_folding = 1
 
-" }}}
-
-" Text, tab and indent related {{{
-
+" Text, tab and indent related {{{1
 " Use tabs instead of spaces
 set noexpandtab
 
@@ -129,19 +121,13 @@ set smartindent
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
 nnoremap <leader>l <esc>:set list!<cr>
 
-" }}}
-
-" Visual mode related {{{
-
+" Visual mode related {{{1
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
-" }}}
-
-" Moving around, tabs, windows and buffers {{{
-
+" Moving around, tabs, windows and buffers {{{1
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 map <c-space> ?
@@ -155,10 +141,7 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" }}}
-
-" Spell checking {{{
-
+" Spell checking {{{1
 " Pressing ,ss will toggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
@@ -171,10 +154,7 @@ map <leader>su zw
 
 hi SpellBad cterm=underline ctermfg=red
 
-" }}}
-
-" Functions {{{
-
+" Functions {{{1
 command! Date :normal a<C-R>=strftime('%F')<CR>
 command! Timestamp :normal a<C-R>=strftime('%F %T')<CR>
 
@@ -185,13 +165,9 @@ function PluginInstalled(plugin)
 				\ || !empty(glob('~/.vim/plugged/' . a:plugin))
 endfunction
 
-" }}}
-
-" Plugins {{{
-
-" Install plugins " {{{
+" Plugins {{{1
+" Install plugins " {{{2
 if !empty(glob('~/.vim/autoload/plug.vim'))
-
 	" Specify a directory for plugins
 	" - For Neovim: stdpath('data') . '/plugged'
 	" - Avoid using standard Vim directory names like 'plugin'
@@ -216,12 +192,9 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 	Plug 'easymotion/vim-easymotion'
 
 	call plug#end()
-
 endif
 
-" }}}
-
-" Configure plugins " {{{
+" Configure plugins " {{{2
 " use the gruvbox theme if available
 if PluginInstalled('gruvbox')
 	autocmd vimenter * ++nested colorscheme gruvbox
@@ -240,18 +213,11 @@ if PluginInstalled('rainbow_parentheses.vim')
 	let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
 endif
 
-" }}}
-
-" Plugin-specific mappings {{{
+" Plugin-specific mappings {{{2
 map <leader> <Plug>(easymotion-prefix)
 
-" }}}
-
-" }}}
-
-" Local override {{{
+" Local override {{{1
 let $LOCALFILE=expand("~/.vimrc_local")
 if filereadable($LOCALFILE)
 	source $LOCALFILE
 endif
-" }}}
