@@ -102,7 +102,13 @@ set ffs=unix,dos,mac
 " strip trialing whitespace from these files
 autocmd FileType c,cpp,java,python autocmd BufWritePre <buffer> %s/\s\+$//e
 
+" Enable markdown folding
 let g:markdown_folding = 1
+
+" Set the default foldlevel to the file's highest foldlevel-1
+" https://superuser.com/a/567391
+autocmd FileType md,markdown autocmd BufWinEnter *
+	\ let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))-1
 
 " Text, tab and indent related {{{1
 " Use tabs instead of spaces
