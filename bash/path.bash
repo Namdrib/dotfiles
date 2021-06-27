@@ -4,7 +4,9 @@
 
 # Start with system path
 # Retrieve it from getconf, otherwise it's just current $PATH
-is-executable getconf && PATH=$($(command -v getconf) PATH)
+if [[ "$OSTYPE" != "msys" ]]; then
+	is-executable getconf && PATH=$($(command -v getconf) PATH)
+fi
 
 # Prepend new items to path (if directory exists)
 # prepend-path is from .function
