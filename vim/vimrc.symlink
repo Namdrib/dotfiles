@@ -6,6 +6,9 @@
 " like <leader>w saves the current file
 let mapleader = ","
 
+" Escape mappings
+inoremap jk <Esc>
+
 " Fast saving
 nmap <leader>w :w!<cr>
 
