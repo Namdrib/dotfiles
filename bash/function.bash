@@ -41,17 +41,17 @@ md() {
 # https://unix.stackexchange.com/questions/97920/how-to-cd-automatically-after-git-clone
 # cd into freshly `git clone` dir
 git_clone_into() {
-	git clone "$1" && cd "$(basename "$1")"
+	git clone "$1" && cd "$(basename "$1")" || exit
 }
 
 # cd into freshly `svn co` dir
 svn_checkout_into() {
-	svn checkout "$1" && cd "$(basename "$1")"
+	svn checkout "$1" && cd "$(basename "$1")" || exit
 }
 
 # Create a new directory and enter it
 mk() {
-	mkdir -p "$@" && cd "$@"
+	mkdir -p "$@" && cd "$@" || exit
 }
 
 # update and upgrade using apt-fast
