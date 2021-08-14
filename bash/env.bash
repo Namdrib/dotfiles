@@ -75,8 +75,7 @@ is-executable thefuck && eval "$(thefuck --alias)"
 
 # python venv
 export WORKON_HOME=~/.virtualenvs
-VIRTUALENVWRAPPER_PYTHON=$(which python3 2> /dev/null)
-if [[ $? == 0 ]]; then
+if VIRTUALENVWRAPPER_PYTHON=$(which python3 2> /dev/null); then
 	export VIRTUALENVWRAPPER_PYTHON
 	[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 fi
