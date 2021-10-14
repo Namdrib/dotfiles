@@ -16,6 +16,8 @@ nmap <leader>w :w!<cr>
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
+nnoremap <leader>rv :so ~/.vimrc<CR>
+
 " VIM UI {{{1
 " Turn on the Wild menu
 set wildmenu
@@ -129,6 +131,12 @@ set smartindent
 " set list
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
 nnoremap <leader>l <esc>:set list!<cr>
+
+" Find trailing whitespace
+nnoremap <leader>sp /\v\s\+$<CR>
+
+" Insert table separator below current line
+nnoremap <Leader>its yyp:s/[^\\|]/-/g<CR>
 
 " Visual mode related {{{1
 " Visual mode pressing * or # searches for the current selection
