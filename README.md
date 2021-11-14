@@ -4,7 +4,7 @@ My dotfiles, heavily inspired by [webpro/dotfiles](https://github.com/webpro/dot
 ## Installation
 Install with `./install.sh`. Note that this does not make any backups of existing dotfiles!
 
-The installation script currently expects that the dotfiles repo has been cloned in ~/.dotfiles
+The installation script currently expects that the dotfiles repo has been cloned in `~/.dotfiles`
 
 You can clone to any arbitrary location and create a symlink to it using `ln -sv $dotfiles_repo_location ~/.dotfiles`, where `$dotfiles_repo_location` is where you cloned the repo
 
@@ -31,6 +31,7 @@ Some of the dotfiles allow for local customisation
 The corresponding paths can be found below:
 
 configuration | customisation
+------------- | -------------
 `bash` | anything in `$HOME/.extra/*` will be sourced
 `vim` | `~/.vimrc.local`
 `git` | `~/.gitconfig.local`
