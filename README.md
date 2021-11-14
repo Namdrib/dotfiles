@@ -33,5 +33,6 @@ The corresponding paths can be found below:
 configuration | customisation
 ------------- | -------------
 `bash` | anything in `$HOME/.extra/*` will be sourced
-`vim` | `~/.vimrc.local`
 `git` | `~/.gitconfig.local`
+`tmux` | `~/.tmux_local.conf`
+`vim` | `~/.vimrc.local`
