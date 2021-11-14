@@ -10,7 +10,7 @@ You can clone to any arbitrary location and create a symlink to it using `ln -sv
 
 The installer finds any file of the format `*.symlink` in the repo and makes symlinks for those files at `~`
 
-e.g. the file `~/dotfiles/tmux/tmux.conf.symlink` will have a symlink at `~/.tmux.conf`
+e.g. the file `~/dotfiles/tmux/tmux.conf.symlink` will result in a symlink at `~/.tmux.conf`
 
 ## Considerations
 The installer will not make any backups!
@@ -19,9 +19,10 @@ It is not selective - i.e. it will install all of the appropriate symlinks
 
 If you want to choose which files to install, you will need to create the symlinks manually, or delete those files in your copy of the repo before running the installer
 
-There are some settings that are specific to my usage, and that may not make sense for your use
-- e.g. loading the ssh agent in `dotfiles/bash/env.bash`, or specific vim plugins
-- some things may also not work properly due assumptions I've made about what version of all the programs are being run
+There are some settings that are specific to my usage, and that may not make sense for your use, including, but not limited to:
+- loading the ssh agent in `dotfiles/bash/env.bash`
+- specific vim plugins
+- some things may not work properly due assumptions I've made about what version of all the programs are being run as
 - my git credentials are stored in the gitconfig, so any commits you make with those will be done as me
 
 ## Extra things
