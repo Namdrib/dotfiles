@@ -22,6 +22,9 @@ set-option -g allow-rename off
 # start window numbering at 1
 set -g base-index 1
 
+# only shrink the window if a smaller client is currently viewing it
+setw -g aggressive-resize on
+
 # mouse stuff {{{
 if-shell -b '[ "$(echo "$TMUX_VERSION < 2.1" | bc)" = 1 ]' " \
 	set -g mode-mouse on; \
