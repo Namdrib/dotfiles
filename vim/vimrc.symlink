@@ -75,6 +75,10 @@ set tm=500
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+" Change default split behaviour
+set splitbelow
+set splitright
+
 " Show line numbers
 set number
 set relativenumber
