@@ -80,6 +80,9 @@ if VIRTUALENVWRAPPER_PYTHON=$(which python3 2> /dev/null); then
 	[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 fi
 
+# Source autojump
+[ -f /usr/share/autojump/autojump.bash ] && source /usr/share/autojump/autojump.bash
+
 # opt out of dotnet CLI telemetry
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
