@@ -130,6 +130,8 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
         'local-directories named-directories path-directories'
 # cdpath }}}
 
+[ -f /usr/share/applications/autojump/autojump.zsh ] && source /usr/share/applications/autojump/autojump.zsh
+
 # source any extra machine/user-specific configs
 if [ -d ~/.extra ]; then
 	for item in ~/.extra/*; do
