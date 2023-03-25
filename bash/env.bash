@@ -83,6 +83,9 @@ fi
 # Source autojump
 [ -f /usr/share/autojump/autojump.bash ] && source /usr/share/autojump/autojump.bash
 
+# Source fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # opt out of dotnet CLI telemetry
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 

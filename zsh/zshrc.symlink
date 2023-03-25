@@ -133,6 +133,9 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
 # Source autojump
 [ -f /usr/share/autojump/autojump.zsh ] && source /usr/share/autojump/autojump.zsh
 
+# Source fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # source any extra machine/user-specific configs
 if [ -d ~/.extra ]; then
 	for item in ~/.extra/*; do
