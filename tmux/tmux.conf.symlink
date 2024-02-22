@@ -133,5 +133,8 @@ setw -g window-status-bell-style 'fg=colour255 bg=colour1 bold'
 set -g message-style 'fg=colour234 bg=colour166 bold'
 # }}}
 
+# Source powerline
+if-shell "[ -f /usr/share/powerline/bindings/tmux/powerline.conf ]" 'source /usr/share/powerline/bindings/tmux/powerline.conf'
+
 # Allow local customization in ~/.tmux_local.conf
 if-shell "[ -f ~/.tmux_local.conf ]" 'source ~/.tmux_local.conf'
