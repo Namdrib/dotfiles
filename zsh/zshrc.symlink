@@ -133,6 +133,12 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
 # Source autojump
 [ -f /usr/share/autojump/autojump.zsh ] && source /usr/share/autojump/autojump.zsh
 
+# Source powerline
+if [ -f /usr/share/powerline/bindings/zsh/powerline.zsh ] && [ -f $(which powerline-daemon) ]; then
+	powerline-daemon -q
+	source /usr/share/powerline/bindings/zsh/powerline.zsh
+fi
+
 # Source fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
