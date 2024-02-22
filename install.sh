@@ -3,7 +3,7 @@
 
 # Get current dir (so run this script from anywhere)
 export DOTFILES_DIR DOTFILES_CACHE DOTFILES_EXTRA_DIR DOTFILES_HOME
-DOTFILES_DIR="$( /usr/bin/cd "$( dirname "${BASH_SOURCE[0]}" )" && /usr/bin/pwd )"
+DOTFILES_DIR="$( cd "$( /usr/bin/dirname "${BASH_SOURCE[0]}" )" && /usr/bin/pwd )"
 DOTFILES_CACHE="$DOTFILES_DIR/.cache.sh"
 DOTFILES_EXTRA_DIR="$HOME/.extra"
 DOTFILES_HOME="$HOME/.dotfiles"
@@ -17,7 +17,9 @@ if is-executable git -a -d "$DOTFILES_DIR/.git"; then
 fi
 
 # Create home dotfiles symlink
-/usr/bin/ln -sfv "$DOTFILES_DIR/" "$DOTFILES_HOME"
+if [ ! -L "${DOTFILES_HOME}" ]; then
+	/usr/bin/ln -sfv "$DOTFILES_DIR/" "$DOTFILES_HOME"
+fi
 
 # Specifically link dotfiles to the home one
 linkables=$( /usr/bin/ls -d -- **/*.symlink )
