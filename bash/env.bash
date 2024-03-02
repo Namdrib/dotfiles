@@ -81,7 +81,13 @@ if VIRTUALENVWRAPPER_PYTHON=$(which python3 2> /dev/null); then
 fi
 
 # Source autojump
-[ -f /etc/profile.d/autojump.bash ] && source /etc/profile.d/autojump.bash
+if [ -f /etc/profile.d/autojump.sh ]; then
+	source /etc/profile.d/autojump.sh
+elif [ -f /etc/profile.d/autojump.bash ]; then
+	source /etc/profile.d/autojump.bash
+elif [ -f /usr/share/autojump/autojump.sh ]; then
+	source /usr/share/autojump/autojump.sh
+fi
 
 # Source fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
