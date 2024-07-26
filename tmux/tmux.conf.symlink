@@ -51,6 +51,7 @@ bind r source-file ~/.tmux.conf \; display " Reloaded tmux config"
 
 # split panes using | and -
 bind | split-window -h
+bind \\ split-window -h
 bind - split-window -v
 
 # open/set current directory {{{
