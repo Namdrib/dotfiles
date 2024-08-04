@@ -13,11 +13,11 @@ set -g history-limit 50000
 set -g default-terminal "screen-256color"
 
 # remove tmux escape delay
-set -s escape-time 0
+set -g escape-time 0
 
 # ensure window titles are not renamed automatically
 # setw -g automatic-rename off
-set-option -g allow-rename off
+set -g allow-rename off
 
 # start window numbering at 1
 set -g base-index 1
@@ -42,7 +42,7 @@ setw -g mode-keys vi
 # BINDINGS {{{
 # remap prefix 'C-b' -> 'C-a' {{{
 unbind C-b
-set-option -g prefix C-a
+set -g prefix C-a
 bind-key C-a send-prefix
 # }}}
 
