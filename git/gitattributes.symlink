@@ -2,3 +2,4 @@
 *.xsl diff=excel
 *.docx diff=zip
 *.xslx diff=zip
+*.py diff=python
