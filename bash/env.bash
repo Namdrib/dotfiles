@@ -80,6 +80,20 @@ if VIRTUALENVWRAPPER_PYTHON=$(which python3 2> /dev/null); then
 	[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 fi
 
+# Source powerline {{{
+if [ -f $(/usr/bin/which powerline-daemon) ]; then
+	# Fedora
+	if [ -f /usr/share/powerline/bash/powerline.sh ]; then
+		source /usr/share/powerline/bash/powerline.sh
+		powerline-daemon -q
+	# Arch, Debian
+	elif [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+		source /usr/share/powerline/bindings/bash/powerline.sh
+		powerline-daemon -q
+	fi
+fi
+# }}} Source powerline
+
 # Source autojump
 if [ -f /etc/profile.d/autojump.sh ]; then
 	source /etc/profile.d/autojump.sh
