@@ -32,3 +32,11 @@ done
 if [ -d "$DOTFILES_EXTRA_DIR" ] && [ -f "$DOTFILES_EXTRA_DIR/install.sh" ] ;then
 	source "$DOTFILES_EXTRA_DIR/install.sh"
 fi
+
+# Install fish environment
+/usr/bin/mkdir -p "${DOTFILES_HOME}/fish/conf.d"
+# shellcheck disable=SC2231
+for fish_file in ${DOTFILES_HOME}/fish/conf.d/*.fish; do
+	target="${HOME}/.config/fish/conf.d/$( /usr/bin/basename "${fish_file}" )"
+	/usr/bin/ln -sfv "${fish_file}" "${target}"
+done
