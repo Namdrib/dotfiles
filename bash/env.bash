@@ -82,14 +82,16 @@ fi
 
 # Source powerline {{{
 if [ -f $(/usr/bin/which powerline-daemon) ]; then
+	powerline-daemon -q
+	POWERLINE_BASH_CONTINUATION=1
+	POWERLINE_BASH_SELECT=1
+
 	# Fedora
 	if [ -f /usr/share/powerline/bash/powerline.sh ]; then
 		source /usr/share/powerline/bash/powerline.sh
-		powerline-daemon -q
 	# Arch, Debian
 	elif [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
 		source /usr/share/powerline/bindings/bash/powerline.sh
-		powerline-daemon -q
 	fi
 fi
 # }}} Source powerline
