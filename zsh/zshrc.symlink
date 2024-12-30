@@ -139,8 +139,9 @@ if [ -f /usr/share/powerline/bindings/zsh/powerline.zsh ] && [ -f $(which powerl
 	source /usr/share/powerline/bindings/zsh/powerline.zsh
 fi
 
-# Source fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Source fzf bindings and completion, if it is installed
+# Works on 0.48+
+[ -x /usr/bin/fzf ] && source<(fzf --zsh)
 
 # source any extra machine/user-specific configs
 if [ -d ~/.extra ]; then
