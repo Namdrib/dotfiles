@@ -141,7 +141,7 @@ fi
 
 # Source fzf bindings and completion, if it is installed
 # Works on 0.48+
-[ -x /usr/bin/fzf ] && source<(fzf --zsh)
+[ -x /usr/bin/fzf ] && source <(fzf --zsh)
 
 # source any extra machine/user-specific configs
 if [ -d ~/.extra ]; then
