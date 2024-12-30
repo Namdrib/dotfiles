@@ -103,8 +103,9 @@ elif [ -f /usr/share/autojump/autojump.sh ]; then
 	source /usr/share/autojump/autojump.sh
 fi
 
-# Source fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Source fzf bindings and completion, if it is installed
+# Works on 0.48+
+is-executable fzf && eval "$(fzf --bash)"
 
 # opt out of dotnet CLI telemetry
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
