@@ -219,7 +219,11 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 	Plug 'nathanaelkane/vim-indent-guides'
 	Plug 'junegunn/rainbow_parentheses.vim'
 
+	" This is the super-charged f (invoked with {leader}f{char}) to jump to any
+	" char on the screen, with little labels for each char
 	Plug 'justinmk/vim-sneak'
+	" This is the super-charged f (invoked with s{char}{char}) to jump to any
+	" two-character match
 	Plug 'easymotion/vim-easymotion'
 
 	call plug#end()
