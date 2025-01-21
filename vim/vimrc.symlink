@@ -210,6 +210,8 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-unimpaired'
 
+	Plug 'junegunn/fzf.vim'
+
 	Plug 'editorconfig/editorconfig-vim'
 
 	Plug 'moll/vim-bbye'
