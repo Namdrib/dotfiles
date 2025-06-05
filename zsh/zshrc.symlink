@@ -67,7 +67,9 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(common-aliases extract git history-substring-search python screen ssh-agent sublime sudo virtualenvwrapper vscode wd)
 
-source $ZSH/oh-my-zsh.sh
+if [[ -f $ZSH/oh-my-zsh.sh ]]; then
+	source $ZSH/oh-my-zsh.sh
+fi
 
 # User configuration
 
