@@ -15,6 +15,7 @@
 	bc = checkout -b
 	bd = branch -d
 	bl = branch -v
+	sw = switch
 
 	# commit
 	c = commit -v
