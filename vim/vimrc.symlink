@@ -123,6 +123,7 @@ let g:markdown_folding = 1
 autocmd FileType md,markdown autocmd BufWinEnter *
 	\ let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))-1
 
+autocmd BufNewFile,BufRead Container*\|Dockerfile* set syntax=dockerfile
 autocmd FileType yaml setlocal ai ts=2 sts=-1 sw=0 et
 
 " Text, tab and indent related {{{1
