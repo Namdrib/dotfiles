@@ -184,6 +184,9 @@ map <leader>su zw
 
 hi SpellBad cterm=underline ctermfg=red
 
+" Turn spell check on for git commit messages
+autocmd FileType gitcommit setlocal spell
+
 " Functions {{{1
 command! Date :normal a<C-R>=strftime('%F')<CR>
 command! Timestamp :normal a<C-R>=strftime('%F %T')<CR>
