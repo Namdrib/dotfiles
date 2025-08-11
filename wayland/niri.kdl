@@ -360,13 +360,15 @@ window-rule {
 
 // Open Steam games fullscreen in the gaming workspace
 window-rule {
-    match app-id=r#".*steamapps.*"#
+    match app-id=r#"steam_app_*"#
     open-on-workspace "gaming"
     open-fullscreen true
+    open-focused false
 }
 
+// Open the Steam client on the secondary monitor
 window-rule {
-    match title="Steam$"
+    match app-id=r#"^steam$"#
     // default-window-height { proportion 0.50; }
     default-column-width { proportion 1.0; }
     open-on-workspace "secondary"
@@ -382,12 +384,28 @@ window-rule {
 }
 
 window-rule {
-    match title="Discord"
+    match app-id=r#"^sol$"#
+    open-floating true
+    default-window-height { proportion 0.55; }
+    default-column-width { proportion 0.4; }
+}
+
+// Don't let the discord updater steal focus
+window-rule {
+    match title="Discord Updater"
+    open-on-workspace "secondary"
+    open-focused false
+}
+
+// Discord opens on the secondary workspace
+window-rule {
+    match app-id="discord"
     default-window-height { proportion 0.50; }
     default-column-width { proportion 1.0; }
     open-on-workspace "secondary"
     open-focused false
 }
+
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
