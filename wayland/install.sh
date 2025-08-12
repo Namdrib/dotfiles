@@ -16,4 +16,5 @@ ln -svf $(realpath swayidle.cfg) ~/.config/swayidle/config
 ln -svf $(realpath swaylock.cfg) ~/.config/swaylock/config
 ln -svf $(realpath waybar-config.jsonc) ~/.config/waybar/config.jsonc
 ln -svf $(realpath waybar-style.css) ~/.config/waybar/style.css
+ln -svf $(realpath waybar-power_menu.xml) ~/.config/waybar/power_menu.xml
 

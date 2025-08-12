@@ -291,7 +291,9 @@ spawn-at-startup "swaybg" "--output" "DP-3" "--image" "/home/namdrib/Pictures/51
 // Automate idle/lock
 spawn-at-startup "swayidle" "-w" "-C" "/home/namdrib/.config/swayidle/config"
 // Start waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
+// Use systemd so it can be restarted to reload configs, rather than having to
+// re-log in niri
+spawn-at-startup "systemctl" "--user" "start" "waybar"
 // Notifications
 spawn-at-startup "mako" "-c" "/home/namdrib/.config/mako/config"
 
