@@ -185,9 +185,7 @@
         "status-icons": {
             "paused": "⏸"
         },
-				"ignored-players": {
-					"kdeconnect"
-				}
+        "ignored-players": [ "kdeconnect" ]
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
