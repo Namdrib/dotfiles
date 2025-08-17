@@ -3,6 +3,7 @@
 # Make sure the destination directories exist
 mkdir -pv \
 	~/.config/fuzzel \
+	~/.config/gtk-3.0 \
 	~/.config/mako \
 	~/.config/niri \
 	~/.config/swayidle \
@@ -12,6 +13,7 @@ mkdir -pv \
 
 ln -svf $(realpath fuzzel.ini) ~/.config/fuzzel/fuzzel.ini
 ln -svf $(realpath mako.cfg) ~/.config/mako/config
+ln -svf $(realpath gtk-3.0-settings.ini) ~/.config/gtk-3.0/settings.ini
 ln -svf $(realpath niri.kdl) ~/.config/niri/config.kdl
 ln -svf $(realpath swayidle.cfg) ~/.config/swayidle/config
 ln -svf $(realpath swaylock.cfg) ~/.config/swaylock/config
