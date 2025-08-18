@@ -64,6 +64,9 @@
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
         // }
     },
+    "bluetooth": {
+        "on-click-middle": "kcmshell6 kcm_bluetooth"
+    },
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -126,7 +129,7 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click-middle": "systemsettings"
+        "on-click-middle": "kcmshell6 kcm_networkmanagement"
     },
     "mpris": {
         "format": "{player_icon} {dynamic}",
@@ -157,7 +160,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-middle": "kcmshell6 kcm_pulseaudio"
     },
     "custom/media": {
         "format": "{icon} {text}",
