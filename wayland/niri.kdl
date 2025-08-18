@@ -284,10 +284,10 @@ layout {
 // See the binds section below for more spawn examples.
 
 spawn-at-startup "niri" "msg" "action" "focus-workspace" "main"
-// Set a landscape background for the primary output
-spawn-at-startup "swaybg" "--output" "DP-1" "--image" "/home/namdrib/Pictures/5120x2880-night.png"
-// Set a portrait background for the secondary output
-spawn-at-startup "swaybg" "--output" "DP-3" "--image" "/home/namdrib/Pictures/5120x2880-night.png" "--mode" "center"
+// Set dark/light theming
+// This requires org.freedesktop.impl.portal.Settings=darkman (portals.conf)
+// Loads the wallpaper
+spawn-at-startup "darkman" "run"
 // Automate idle/lock
 spawn-at-startup "swayidle" "-w"
 // Start waybar, a commonly used bar for Wayland compositors.
@@ -310,6 +310,7 @@ environment {
     DISPLAY ":0"
     QT_QPA_PLATFORM "wayland"
     QT_QPA_PLATFORMTHEME "qt6ct"
+    GTK_USE_PORTAL "1"
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
