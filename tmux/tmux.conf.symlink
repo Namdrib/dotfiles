@@ -6,6 +6,15 @@ run-shell 'tmux setenv -g TMUX_VERSION $(tmux -V | \
            sed -En "s/^tmux[^0-9]*([.0-9]+).*/\1/p")'
 
 # SETTINGS {{{
+# Set the default fish for now - just assume it exists on this system
+# If chsh -> fish, sddm never gets to a display see:
+# https://github.com/sddm/sddm/issues/1768#issuecomment-1666211742
+# Even though the associated PR (1779) is merged into sddm, until that change
+# is absorbed into the relevant distributions, this will need to be here
+# Even if konsole's default shell is set to fish, tmux will still open the
+# shell set by chsh, which is bash, so every terminal in tmux gets bash
+set -g default-shell /usr/bin/fish
+
 # add a bit more scroll history in the buffer
 set -g history-limit 50000
 
