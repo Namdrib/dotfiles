@@ -283,19 +283,11 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
+// darkman, mako, waybar are started as systemctl user services
+// they are added as `--user add-wants` to niri.service
 spawn-at-startup "niri" "msg" "action" "focus-workspace" "main"
-// Set dark/light theming
-// This requires org.freedesktop.impl.portal.Settings=darkman (portals.conf)
-// Loads the wallpaper
-spawn-at-startup "darkman" "run"
 // Automate idle/lock
 spawn-at-startup "swayidle" "-w"
-// Start waybar, a commonly used bar for Wayland compositors.
-// Use systemd so it can be restarted to reload configs, rather than having to
-// re-log in niri
-spawn-at-startup "systemctl" "--user" "start" "waybar"
-// Notifications
-spawn-at-startup "mako"
 
 spawn-at-startup "xwayland-satellite"
 
