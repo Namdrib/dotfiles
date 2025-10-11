@@ -20,3 +20,12 @@ Each file is then symlinked into place.
 See `install.sh` for lower-level implementation details.
 
 The top-level install script will call this one if given the `-w/--wayland` switches
+
+## TODO
+- Likely all XDG portal issues:
+	- Copy-paste across programs doesn't always work
+	- The file picker doesn't always correctly turn up when using ctrl-s or ctrl-o, etc.
+	- Not all KDE applications run in dark mode
+	- Default applications don't work (always prompted for application when double-clicking to open)
+- Yakuake doesn't "drop" down - it just acts as another window
+- SDDM doesn't play nicely when fish is the default shell
