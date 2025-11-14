@@ -23,5 +23,4 @@ ln -svf $(realpath waybar-power_menu.xml) ~/.config/waybar/power_menu.xml
 # Use KDE backends for things like file picker, secrets
 ln -svf $(realpath niri-portals.conf) ~/.config/xdg-desktop-portal/niri-portals.conf
 
-ln -svfT $(realpath darkman/dark-mode.d) ~/.local/share/dark-mode.d
-ln -svfT $(realpath darkman/light-mode.d) ~/.local/share/light-mode.d
+ln -svfT $(realpath darkman) ~/.local/share/darkman
