@@ -298,6 +298,8 @@ spawn-at-startup "kwalletd6"
 spawn-at-startup "/usr/lib/pam_kwallet_init"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 
+spawn-at-startup "/usr/bin/krunner" "--daemon"
+
 spawn-at-startup "konsole"
 
 // Allow x applications to run
@@ -461,6 +463,8 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Ctrl+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock" "-f" "-C" "/home/namdrib/.config/swaylock/config"; }
     Mod+E hotkey-overlay-title="Open a file explorer" { spawn "dolphin"; }
+
+    Alt+Space hotkey-overlay-title="Open Krunner" { "spawn" "krunner"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
