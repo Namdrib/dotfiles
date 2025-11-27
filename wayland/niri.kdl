@@ -402,6 +402,7 @@ window-rule {
 // Discord opens on the secondary workspace
 window-rule {
     match app-id="discord"
+    match app-id="vesktop"
     default-window-height { proportion 0.50; }
     default-column-width { proportion 1.0; }
     open-on-workspace "secondary"
