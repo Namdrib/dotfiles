@@ -393,6 +393,13 @@ window-rule {
     default-column-width { proportion 0.4; }
 }
 
+window-rule {
+    match app-id="org.kde.kcalc"
+    open-floating true
+    default-window-height { proportion 0.5; }
+    default-column-width { proportion 0.3; }
+}
+
 // Don't let the discord updater steal focus
 window-rule {
     match title="Discord Updater"
@@ -484,6 +491,8 @@ binds {
     XF86AudioNext        allow-when-locked=true { spawn "playerctl" "next"; }
     XF86AudioPlay        allow-when-locked=true { spawn "playerctl" "play-pause"; }
     XF86AudioStop                               { spawn "playerctl" "stop"; }
+
+    XF86Calculator { spawn "kcalc"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
