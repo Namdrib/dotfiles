@@ -1,0 +1,5 @@
+# Use geoclue -no guarantee that geoclue exists locallly
+usegeoclue: true
+# Fall back to co-ordinates
+lat: -33.8
+lng: 151.2
