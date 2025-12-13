@@ -24,3 +24,6 @@ ln -svf $(realpath waybar-power_menu.xml) ~/.config/waybar/power_menu.xml
 ln -svf $(realpath niri-portals.conf) ~/.config/xdg-desktop-portal/niri-portals.conf
 
 ln -svfT $(realpath darkman) ~/.local/share/darkman
+# Point the old paths to the new one for backwards compatibility
+ln -svfT ~/.local/share/darkman ~/.local/share/dark-mode.d
+ln -svfT ~/.local/share/darkman ~/.local/share/light-mode.d
