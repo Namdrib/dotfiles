@@ -9,7 +9,8 @@ mkdir -pv \
 	~/.config/swayidle \
 	~/.config/swaylock \
 	~/.config/waybar \
-	~/.config/xdg-desktop-portal
+	~/.config/xdg-desktop-portal \
+	~/.local/share/darkman
 
 ln -svf $(realpath fuzzel.ini) ~/.config/fuzzel/fuzzel.ini
 ln -svf $(realpath mako.cfg) ~/.config/mako/config
