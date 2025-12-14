@@ -80,7 +80,7 @@ output "DP-1" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "2560x1440@165.080"
+    mode "2560x1440"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1
@@ -103,7 +103,7 @@ output "DP-1" {
 
 output "DP-3" {
     // This monitor is portrait, and to the right of the primary monitor
-    mode "2560x1440@59.951"
+    mode "2560x1440"
     scale 1
     transform "270"
     position x=2560 y=-720
