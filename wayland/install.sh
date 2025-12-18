@@ -3,7 +3,6 @@
 # Make sure the destination directories exist
 mkdir -pv \
 	~/.config/darkman \
-	~/.config/fuzzel \
 	~/.config/gtk-3.0 \
 	~/.config/mako \
 	~/.config/niri \
@@ -13,7 +12,7 @@ mkdir -pv \
 	~/.config/xdg-desktop-portal \
 	~/.local/share/darkman
 
-ln -svf $(realpath fuzzel.ini) ~/.config/fuzzel/fuzzel.ini
+ln -svfT $(realpath fuzzel) ~/.config/fuzzel
 ln -svf $(realpath mako.cfg) ~/.config/mako/config
 ln -svf $(realpath gtk-3.0-settings.ini) ~/.config/gtk-3.0/settings.ini
 ln -svf $(realpath niri.kdl) ~/.config/niri/config.kdl
