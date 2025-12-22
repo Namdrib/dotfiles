@@ -16,5 +16,6 @@ case "$1" in
 	default) exit 1 ;;
 esac
 
+echo "Switching to ${THEME} and ${THEME2}"
 dbus-send --session --dest=org.kde.GtkConfig --type=method_call /GtkConfig org.kde.GtkConfig.setGtkTheme "string:${THEME2}"
 gsettings set org.gnome.desktop.interface gtk-theme "${THEME}"

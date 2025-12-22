@@ -24,4 +24,5 @@ if pgrep niri; then
 	swaybg --output DP-1 --image "${LANDSCAPE_IMG}" &
 	swaybg --output DP-3 --image "${PORTRAIT_IMG}" --mode center &
 	swaybg --output HDMI-A-2 --image "${LANDSCAPE_2_IMG}" &
+	echo "darkman: Setting wallpaper(s) to ${IMG_1_DIR} and ${IMG_2_DIR}"
 fi
