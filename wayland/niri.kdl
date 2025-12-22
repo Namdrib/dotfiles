@@ -612,6 +612,16 @@ binds {
     Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
     Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
 
+    // Focus monitors with the mouse forward/back buttons
+    // This breaks from the convention of shift controlling the axis
+    // (horizontal vs. vertical movement) because I don't expect to have enough
+    // monitors to make this useful. Instead, next/previous monitor is good
+    // enough, and requires less precision
+    Mod+MouseForward      { focus-monitor-next; }
+    Mod+MouseBack         { focus-monitor-previous; }
+    Mod+Ctrl+MouseForward { move-window-to-monitor-next; }
+    Mod+Ctrl+MouseBack    { move-window-to-monitor-previous; }
+
     // Similarly, you can bind touchpad scroll "ticks".
     // Touchpad scrolling is continuous, so for these binds it is split into
     // discrete intervals.
