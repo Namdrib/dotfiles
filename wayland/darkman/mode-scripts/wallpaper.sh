@@ -24,8 +24,9 @@ PORTRAIT_IMG="${IMG_1_DIR}/5120x2880.png"
 LANDSCAPE_2_IMG="${IMG_2_DIR}/5120x2880.png"
 
 if pgrep niri; then
-	swaybg --output DP-1 --image "${LANDSCAPE_IMG}" &
-	swaybg --output DP-3 --image "${PORTRAIT_IMG}" --mode center &
-	swaybg --output HDMI-A-2 --image "${LANDSCAPE_2_IMG}" &
-	echo "darkman: Setting wallpaper(s) to ${IMG_1_DIR} and ${IMG_2_DIR}"
+	echo "Setting wallpaper(s) to ${IMG_1_DIR} and ${IMG_2_DIR}"
+	outputs=$(swww query)
+	[[ "$outputs" == *"DP-1"* ]] && swww img -o DP-1 "${LANDSCAPE_IMG}"
+	[[ "$outputs" == *"DP-3"* ]] && swww img -o DP-3 "${PORTRAIT_IMG}"
+	[[ "$outputs" == *"HDMA-A-2"* ]] && swww img -o HDMI-A-2 "${LANDSCAPE_2_IMG}"
 fi

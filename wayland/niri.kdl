@@ -292,6 +292,9 @@ spawn-at-startup "niri" "msg" "action" "focus-workspace" "main"
 // Automate idle/lock
 spawn-at-startup "swayidle" "-w"
 
+// Spawn wallpaper daemon
+spawn-at-startup "swww-daemon"
+
 spawn-at-startup "xwayland-satellite"
 
 spawn-at-startup "kwalletd6"
