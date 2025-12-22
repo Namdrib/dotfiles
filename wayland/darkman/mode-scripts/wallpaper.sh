@@ -6,13 +6,16 @@ WALLPAPERS_DIR=/usr/share/wallpapers
 # Select based on which theme to use
 case $1 in
 	dark)
-		IMG_1_DIR="${WALLPAPERS_DIR}/Bamboo\ at\ Night/contents/images"
+		IMG_1_DIR="${WALLPAPERS_DIR}/Bamboo at Night/contents/images"
 		IMG_2_DIR="${WALLPAPERS_DIR}/Mountain/contents/images_dark"
 		;;
 	light)
-		IMG_1_DIR="${WALLPAPERS_DIR}/Bamboo"
-		IMG_2_DIR="${WALLPAPERS_DIR}/Mountain/contents/images" ;;
-	default) exit 1 ;;
+		IMG_1_DIR="${WALLPAPERS_DIR}/Bamboo/contents/images"
+		IMG_2_DIR="${WALLPAPERS_DIR}/Mountain/contents/images"
+		;;
+	default)
+		exit 1
+		;;
 esac
 
 # The specific images to use
