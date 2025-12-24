@@ -28,5 +28,5 @@ if pgrep niri; then
 	outputs=$(swww query)
 	[[ "$outputs" == *"DP-1"* ]] && swww img -o DP-1 "${LANDSCAPE_IMG}" --transition-type wipe --transition-fps 165 --transition-step 10
 	[[ "$outputs" == *"DP-3"* ]] && swww img -o DP-3 "${PORTRAIT_IMG}" --transition-type wipe --transition-fps 75 --transition-step 10
-	[[ "$outputs" == *"HDMA-A-2"* ]] && swww img -o HDMI-A-2 "${LANDSCAPE_2_IMG}"
+	[[ "$outputs" == *"HDMI-A-2"* ]] && swww img -o HDMI-A-2 "${LANDSCAPE_2_IMG}"
 fi
