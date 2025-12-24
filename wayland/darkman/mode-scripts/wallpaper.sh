@@ -7,10 +7,10 @@ WALLPAPERS_DIR=/usr/share/wallpapers
 
 if [[ $1 == dark ]] || [[ $0 == *"dark-mode"* ]]; then
 	IMG_1_DIR="${WALLPAPERS_DIR}/Bamboo at Night/contents/images"
-	IMG_2_DIR="${WALLPAPERS_DIR}/Mountain/contents/images_dark"
+	IMG_2_DIR="${WALLPAPERS_DIR}/ScarletTree/contents/images_dark"
 elif [[ $1 == light ]] || [[ $0 == *"light-mode"* ]]; then
 	IMG_1_DIR="${WALLPAPERS_DIR}/Bamboo/contents/images"
-	IMG_2_DIR="${WALLPAPERS_DIR}/Mountain/contents/images"
+	IMG_2_DIR="${WALLPAPERS_DIR}/ScarletTree/contents/images"
 else
 	echo "Unable to detect mode"
 	exit 1
