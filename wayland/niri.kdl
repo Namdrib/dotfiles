@@ -386,14 +386,6 @@ window-rule {
     open-focused true
 }
 
-// Open the Steam client on the secondary monitor
-window-rule {
-    match title=r#"^steam$"#
-    default-column-width { proportion 1.0; }
-    open-on-workspace "secondary"
-    open-focused false
-}
-
 // Open Steam pop-up windows on the secondary monitor, floating
 window-rule {
     match app-id=r#"^steam$"#
@@ -401,6 +393,15 @@ window-rule {
     default-column-width { proportion 0.66666; }
     open-on-workspace "secondary"
     open-focused true
+}
+
+// Open the Steam client on the secondary monitor
+window-rule {
+    match title="Steam"
+    open-floating false
+    default-column-width { proportion 1.0; }
+    open-on-workspace "secondary"
+    open-focused false
 }
 
 window-rule {
