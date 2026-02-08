@@ -26,6 +26,14 @@
 	f = fetch
 	p = push
 	m = merge
+	# Update a non-checked-out branch with the contents of its remote branch with
+	# the same name
+	# This is useful for preparing for a git merge into the current branch
+	# without needing to switch into the other branch first
+	# For example:
+	# 1. git up-int main # fetch and update the local copy of `main`
+	# 2. git merge main # merge the local `main` into the current branch
+	up-int = "!git fetch origin \"$1\":\"$1\" #"
 
 	# diff
 	d = diff
