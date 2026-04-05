@@ -217,6 +217,7 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 	Plug 'junegunn/fzf.vim'
 
 	Plug 'editorconfig/editorconfig-vim'
+	Plug 'dense-analysis/ale'
 
 	Plug 'moll/vim-bbye'
 
@@ -252,6 +253,11 @@ endif
 
 if PluginInstalled('rainbow_parentheses.vim')
 	let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
+endif
+
+if PluginInstalled('ale')
+	let g:ale_completion_enabled = 1
+	let b:ale_fixers = ['pylint', 'pylsp']
 endif
 
 " Plugin-specific mappings {{{2
