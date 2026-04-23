@@ -139,7 +139,10 @@ layout {
     gaps 8
 
     tab-indicator {
-        "place-within-column"
+        place-within-column
+        active-color "#cc241daa"
+        inactive-gradient from="b8bb26" to="83a598"
+        gaps-between-tabs 5
     }
 
     // When to center a column when changing focus, options are:
