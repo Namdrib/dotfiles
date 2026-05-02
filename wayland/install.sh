@@ -13,6 +13,7 @@ mkdir -pv \
 
 ln -svfT $(realpath fuzzel) ~/.config/fuzzel
 ln -svf $(realpath mako.cfg) ~/.config/mako/config
+ln -svf $(realpath niri/binds.kdl) ~/.config/niri/binds.kdl
 ln -svf $(realpath niri/config.kdl) ~/.config/niri/config.kdl
 ln -svf $(realpath swayidle.cfg) ~/.config/swayidle/config
 ln -svf $(realpath swaylock.cfg) ~/.config/swaylock/config
