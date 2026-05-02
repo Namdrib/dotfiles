@@ -58,7 +58,7 @@ done
 DOTFILES_EXTRA_DIR="$HOME/.extra"
 
 if [ -d "$DOTFILES_EXTRA_DIR" ]; then
-	for EXTRAFILE in "$DOTFILES_EXTRA_DIR"/*; do
+	for EXTRAFILE in "$DOTFILES_EXTRA_DIR"/*.sh "$DOTFILES_EXTRA_DIR"/*.bash; do
 		[ -f "$EXTRAFILE" ] && source "$EXTRAFILE"
 	done
 fi
