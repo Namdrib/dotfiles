@@ -17,6 +17,7 @@ ln -svf $(realpath niri/binds.kdl) ~/.config/niri/binds.kdl
 ln -svf $(realpath niri/config.kdl) ~/.config/niri/config.kdl
 ln -svf $(realpath niri/layout.kdl) ~/.config/niri/layout.kdl
 ln -svf $(realpath niri/output.kdl) ~/.config/niri/output.kdl
+ln -svf $(realpath niri/rules.kdl) ~/.config/niri/rules.kdl
 ln -svf $(realpath swayidle.cfg) ~/.config/swayidle/config
 ln -svf $(realpath swaylock.cfg) ~/.config/swaylock/config
 ln -svf $(realpath waybar-config.jsonc) ~/.config/waybar/config.jsonc
