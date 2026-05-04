@@ -85,7 +85,7 @@ spawn-at-startup "niri" "msg" "action" "focus-workspace" "main"
 spawn-at-startup "swayidle" "-w"
 
 // Spawn wallpaper daemon
-spawn-at-startup "swww-daemon"
+spawn-at-startup "awww-daemon"
 
 spawn-at-startup "xwayland-satellite"
 

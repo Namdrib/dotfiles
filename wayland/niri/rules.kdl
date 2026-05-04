@@ -130,7 +130,7 @@ window-rule {
 }
 
 // The wallpaper from DMS goes into the background (visible on overview)
-// Keep the primary wallpaper (e.g. from swaybg or swww) in the foreground
+// Keep the primary wallpaper (e.g. from swaybg or awww) in the foreground
 layer-rule {
     match namespace="^quickshell$"
     place-within-backdrop true
