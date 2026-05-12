@@ -244,6 +244,7 @@ if PluginInstalled('gruvbox')
 	" apply to airline too if installed
 	if PluginInstalled('vim-airline')
 		let g:airline_theme='gruvbox'
+		let g:airline_powerline_fonts=1
 	endif
 
 	let g:gruvbox_guisp_as_guifg=1
