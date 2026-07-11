@@ -34,6 +34,7 @@ window-rule {
 // Open Steam pop-up windows on the secondary monitor, floating
 window-rule {
     match app-id=r#"^steam$"#
+    exclude title=r#"^steam$"#
     open-floating true
     default-column-width { proportion 0.66666; }
     open-on-workspace "secondary"
@@ -42,7 +43,7 @@ window-rule {
 
 // Open the Steam client on the secondary monitor
 window-rule {
-    match title="Steam"
+    match title=r#"^Steam$"#
     open-floating false
     default-column-width { proportion 1.0; }
     open-on-workspace "secondary"
