@@ -257,13 +257,40 @@ if PluginInstalled('rainbow_parentheses.vim')
 	let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
 endif
 
+" ALE is used for linting and formatting fixes
 if PluginInstalled('ale')
 	let g:ale_completion_enabled = 1
-	let b:ale_fixers = ['pylint', 'pylsp']
+	set omnifunc=ale#completion#OmniFunc
+
+	let g:ale_fix_on_save = 1
+	if PluginInstalled('fzf.vim')
+		let g:ale_references_use_fzf = 1
+	endif
+
+	" Configure the set of linters and fixers to use
+	let b:ale_linters = {'python': ['pylsp']}
+	let b:ale_fixers = {
+		\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+		\   'python': ['black', 'isort']
+	  \ }
+
+	" Python-specific setup for ALE
+	let g:ale_python_pylsp_config = {
+		\ 'pylsp': {
+		\   'plugins': {
+		\     'isort': { 'enabled': v:true },
+		\     'rope': { 'enabled': v:true },
+		\   },
+		\ },
+		\ }
 endif
 
 " Plugin-specific mappings {{{2
 map <leader> <Plug>(easymotion-prefix)
+nnoremap <leader>K <Plug>(ale_hover)
+nnoremap <leader>gd <Plug>(ale_go_to_definition)
+nnoremap <leader>gi <Plug>(ale_go_to_implementation)
+nnoremap <leader>gr <Plug>(ale_find_references)
 
 " Local override {{{1
 let $LOCALFILE=expand("~/.vimrc_local")
