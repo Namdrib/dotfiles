@@ -23,6 +23,10 @@ binds {
     Alt+Space hotkey-overlay-title="Open Krunner" { "spawn" "krunner"; }
     Mod+Alt+D hotkey-overlay-title="Toggle Light/Dark" { "spawn" "darkman" "toggle"; }
 
+		// Screencasting shortcuts
+		Mod+F1 { spawn "bash" "-c" "niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)"; }
+		Mod+F3 { spawn "bash" "-c" "niri msg action clear-dynamic-cast-target"; }
+
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
