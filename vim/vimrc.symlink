@@ -219,6 +219,9 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 
 	Plug 'editorconfig/editorconfig-vim'
 	Plug 'dense-analysis/ale'
+	Plug 'prabirshrestha/asyncomplete.vim'
+	Plug 'prabirshrestha/vim-lsp'
+	Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 	Plug 'moll/vim-bbye'
 
@@ -285,12 +288,26 @@ if PluginInstalled('ale')
 		\ }
 endif
 
+" LSP is used for a more IDE-like experience, with things like:
+" completion, hover, navigation, renaming
+if PluginInstalled('vim-lsp')
+	if executable('pyls')
+		au User lsp_setup call lsp#register_server({
+			\ 'name': 'pyls',
+			\ 'cmd': {server_info->['pyls']},
+			\ 'whitelist': ['python'],
+			\ })
+	endif
+endif
+
 " Plugin-specific mappings {{{2
 map <leader> <Plug>(easymotion-prefix)
 nnoremap <leader>K <Plug>(ale_hover)
 nnoremap <leader>gd <Plug>(ale_go_to_definition)
 nnoremap <leader>gi <Plug>(ale_go_to_implementation)
 nnoremap <leader>gr <Plug>(ale_find_references)
+
+nnoremap <F2> <cmd>LspRename<CR>
 
 " Local override {{{1
 let $LOCALFILE=expand("~/.vimrc_local")
