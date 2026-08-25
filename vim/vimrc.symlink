@@ -195,8 +195,8 @@ command! Timestamp :normal a<C-R>=strftime('%F %T')<CR>
 " Return true if a plugin is installed
 function PluginInstalled(plugin)
 	return !empty(glob('~/.vim/pack/' . a:plugin . '/start/' . a:plugin))
-				\ || !empty(glob('~/.vim/pack/default/start/' . a:plugin))
-				\ || !empty(glob('~/.vim/plugged/' . a:plugin))
+		\ || !empty(glob('~/.vim/pack/default/start/' . a:plugin))
+		\ || !empty(glob('~/.vim/plugged/' . a:plugin))
 endfunction
 
 " Plugins {{{1
