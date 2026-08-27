@@ -197,6 +197,7 @@ function PluginInstalled(plugin)
 	return !empty(glob('~/.vim/pack/' . a:plugin . '/start/' . a:plugin))
 		\ || !empty(glob('~/.vim/pack/default/start/' . a:plugin))
 		\ || !empty(glob('~/.vim/plugged/' . a:plugin))
+		\ || !empty(glob('/usr/share/vim/vimfiles/autoload/' . a:plugin))
 endfunction
 
 " Plugins {{{1
