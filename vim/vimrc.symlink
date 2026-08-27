@@ -272,11 +272,25 @@ if PluginInstalled('ale')
 	endif
 
 	" Configure the set of linters and fixers to use
-	let b:ale_linters = {'python': ['pylsp']}
+	let b:ale_linters = {
+		\   '*': [],
+		\   'ansible': ['ansible_lint'],
+		\   'c': ['cppcheck'],
+		\   'cpp': ['cppcheck'],
+		\   'fish': ['fish'],
+		\   'markdown': ['vale', 'markdownlint'],
+		\   'java': ['javac'],
+		\   'sh': ['shellcheck'],
+		\   'systemd': ['systemd_analyze'],
+		\   'text': ['vale'],
+		\   'vim': ['vint'],
+		\   'yaml': ['yamllint']
+		\ }
+
 	let b:ale_fixers = {
 		\   '*': ['remove_trailing_lines', 'trim_whitespace'],
 		\   'python': ['black', 'isort']
-	  \ }
+		\ }
 
 	" Python-specific setup for ALE
 	let g:ale_python_pylsp_config = {
