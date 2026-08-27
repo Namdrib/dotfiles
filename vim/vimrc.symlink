@@ -4,7 +4,7 @@
 " General {{{1
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
+let mapleader = ','
 
 " Escape mappings
 inoremap jk <Esc>
@@ -24,7 +24,7 @@ set wildmenu
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
+if has('win16') || has('win32')
 	set wildignore+=.git\*,.hg\*,.svn\*
 else
 	set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
@@ -64,13 +64,13 @@ set showcmd
 " Show matching brackets when text indicator is over them
 set showmatch
 " How many tenths of a second to blink when matching brackets
-set mat=2
+set matchtime=2
 
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
 set t_vb=
-set tm=500
+set timeoutlen=500
 
 " Add a bit extra margin to the left
 set foldcolumn=1
@@ -98,7 +98,7 @@ set cursorline
 nnoremap <leader>h :set cursorline!<CR>
 
 " Draw a vertical line at a given column
-set cc=
+set colorcolumn=
 call matchadd('ColorColumn', '\%80v')
 highlight ColorColumn ctermbg=Magenta guibg=lightgrey
 
@@ -109,7 +109,7 @@ syntax enable
 set background=dark
 
 " Use Unix default file type
-set ffs=unix,dos,mac
+set fileformats=unix,dos,mac
 
 " Files, backups and undo {{{1
 " strip trialing whitespace from these files
@@ -325,7 +325,7 @@ nnoremap <leader>gr <Plug>(ale_find_references)
 nnoremap <F2> <cmd>LspRename<CR>
 
 " Local override {{{1
-let $LOCALFILE=expand("~/.vimrc_local")
+let $LOCALFILE=expand('~/.vimrc_local')
 if filereadable($LOCALFILE)
 	source $LOCALFILE
 endif
