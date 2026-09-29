@@ -73,6 +73,11 @@
 	# helper = cache
 	helper = /usr/lib/git-core/git-credential-libsecret
 
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 [diff "word"]
 	textconv = strings
 [diff "excel"]
