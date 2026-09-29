@@ -61,6 +61,8 @@
 	rebase = false
 [merge]
 	conflictStyle = diff3
+[tag]
+	sort = version:refname
 
 [credential]
 	# helper = cache
