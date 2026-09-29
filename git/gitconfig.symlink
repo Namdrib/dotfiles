@@ -69,6 +69,10 @@
 [tag]
 	sort = version:refname
 
+[rerere]
+	enabled = true
+	autoupdate = true
+
 [credential]
 	# helper = cache
 	helper = /usr/lib/git-core/git-credential-libsecret
