@@ -63,7 +63,8 @@
 	conflictStyle = diff3
 
 [credential]
-	helper = cache
+	# helper = cache
+	helper = /usr/lib/git-core/git-credential-libsecret
 
 [diff "word"]
 	textconv = strings
