@@ -227,6 +227,7 @@ if !empty(glob('~/.vim/autoload/plug.vim'))
 	Plug 'moll/vim-bbye'
 
 	Plug 'vim-airline/vim-airline'
+	Plug 'airblade/vim-gitgutter'
 	Plug 'morhetz/gruvbox'
 	Plug 'nathanaelkane/vim-indent-guides'
 	Plug 'junegunn/rainbow_parentheses.vim'
