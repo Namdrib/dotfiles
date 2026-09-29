@@ -61,6 +61,11 @@
 	rebase = false
 [merge]
 	conflictStyle = diff3
+
+[rerere]
+	enabled = true
+	autoupdate = true
+
 [tag]
 	sort = version:refname
 
