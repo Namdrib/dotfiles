@@ -87,8 +87,6 @@ spawn-at-startup "swayidle" "-w"
 // Spawn wallpaper daemon
 spawn-at-startup "awww-daemon"
 
-spawn-at-startup "xwayland-satellite"
-
 spawn-at-startup "kwalletd6"
 spawn-at-startup "/usr/lib/pam_kwallet_init"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
@@ -98,8 +96,6 @@ spawn-at-startup "/usr/bin/krunner" "--daemon"
 spawn-at-startup "konsole"
 
 environment {
-    // Allow x applications to run
-    DISPLAY ":0"
     QT_QPA_PLATFORM "wayland"
     // Fix dark mode and font size on some KDE applications
     QT_QPA_PLATFORMTHEME "kde"
