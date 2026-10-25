@@ -97,11 +97,17 @@ spawn-at-startup "/usr/bin/krunner" "--daemon"
 
 spawn-at-startup "konsole"
 
-// Allow x applications to run
 environment {
+    // Allow x applications to run
     DISPLAY ":0"
     QT_QPA_PLATFORM "wayland"
+    // Fix dark mode and font size on some KDE applications
     QT_QPA_PLATFORMTHEME "kde"
+    // For light/dark theming with darkman, according to the commit adding this
+    // However, more likely to make GTK applicatnos (like firefox) use the XDG
+    // portal preferences when opening things like file pickers (allegedly).
+    // Opening the save or open dialogues in firefox without this set has no
+    // change compared to when it is set, even with a reboot in between
     GTK_USE_PORTAL "1"
 }
 
